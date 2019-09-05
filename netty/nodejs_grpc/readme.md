@@ -1,0 +1,2 @@
+生成脚本:
+`grpc_tools_node_protoc --js_out=import_style=commonjs,binary:static_codegen/ --grpc_out=static_codegen --plugin=protoc-gen-grpc=C:\\Users\\hat\\AppData\\Roaming\\npm\\node_modules\\grpc-tools\\bin\\grpc_node_plugin.exe proto/Student.proto`
