@@ -76,15 +76,15 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return StudentProto.internal_static_hhz_demo10_proto_StreamResponse_descriptor;
+    return hhz.demo10.proto.StudentProto.internal_static_hhz_demo10_proto_StreamResponse_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return StudentProto.internal_static_hhz_demo10_proto_StreamResponse_fieldAccessorTable
+    return hhz.demo10.proto.StudentProto.internal_static_hhz_demo10_proto_StreamResponse_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            StreamResponse.class, Builder.class);
+            hhz.demo10.proto.StreamResponse.class, hhz.demo10.proto.StreamResponse.Builder.class);
   }
 
   public static final int RESPONSE_INFO_FIELD_NUMBER = 1;
@@ -160,10 +160,10 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof StreamResponse)) {
+    if (!(obj instanceof hhz.demo10.proto.StreamResponse)) {
       return super.equals(obj);
     }
-    StreamResponse other = (StreamResponse) obj;
+    hhz.demo10.proto.StreamResponse other = (hhz.demo10.proto.StreamResponse) obj;
 
     if (!getResponseInfo()
         .equals(other.getResponseInfo())) return false;
@@ -185,69 +185,69 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static StreamResponse parseFrom(
+  public static hhz.demo10.proto.StreamResponse parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static StreamResponse parseFrom(
+  public static hhz.demo10.proto.StreamResponse parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static StreamResponse parseFrom(
+  public static hhz.demo10.proto.StreamResponse parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static StreamResponse parseFrom(
+  public static hhz.demo10.proto.StreamResponse parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static StreamResponse parseFrom(byte[] data)
+  public static hhz.demo10.proto.StreamResponse parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static StreamResponse parseFrom(
+  public static hhz.demo10.proto.StreamResponse parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static StreamResponse parseFrom(java.io.InputStream input)
+  public static hhz.demo10.proto.StreamResponse parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static StreamResponse parseFrom(
+  public static hhz.demo10.proto.StreamResponse parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static StreamResponse parseDelimitedFrom(java.io.InputStream input)
+  public static hhz.demo10.proto.StreamResponse parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static StreamResponse parseDelimitedFrom(
+  public static hhz.demo10.proto.StreamResponse parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static StreamResponse parseFrom(
+  public static hhz.demo10.proto.StreamResponse parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static StreamResponse parseFrom(
+  public static hhz.demo10.proto.StreamResponse parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -260,7 +260,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(StreamResponse prototype) {
+  public static Builder newBuilder(hhz.demo10.proto.StreamResponse prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   @java.lang.Override
@@ -271,7 +271,7 @@ private static final long serialVersionUID = 0L;
 
   @java.lang.Override
   protected Builder newBuilderForType(
-      BuilderParent parent) {
+      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
@@ -284,15 +284,15 @@ private static final long serialVersionUID = 0L;
       hhz.demo10.proto.StreamResponseOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return StudentProto.internal_static_hhz_demo10_proto_StreamResponse_descriptor;
+      return hhz.demo10.proto.StudentProto.internal_static_hhz_demo10_proto_StreamResponse_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return StudentProto.internal_static_hhz_demo10_proto_StreamResponse_fieldAccessorTable
+      return hhz.demo10.proto.StudentProto.internal_static_hhz_demo10_proto_StreamResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              StreamResponse.class, Builder.class);
+              hhz.demo10.proto.StreamResponse.class, hhz.demo10.proto.StreamResponse.Builder.class);
     }
 
     // Construct using hhz.demo10.proto.StreamResponse.newBuilder()
@@ -301,7 +301,7 @@ private static final long serialVersionUID = 0L;
     }
 
     private Builder(
-        BuilderParent parent) {
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
@@ -321,17 +321,17 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return StudentProto.internal_static_hhz_demo10_proto_StreamResponse_descriptor;
+      return hhz.demo10.proto.StudentProto.internal_static_hhz_demo10_proto_StreamResponse_descriptor;
     }
 
     @java.lang.Override
-    public StreamResponse getDefaultInstanceForType() {
-      return StreamResponse.getDefaultInstance();
+    public hhz.demo10.proto.StreamResponse getDefaultInstanceForType() {
+      return hhz.demo10.proto.StreamResponse.getDefaultInstance();
     }
 
     @java.lang.Override
-    public StreamResponse build() {
-      StreamResponse result = buildPartial();
+    public hhz.demo10.proto.StreamResponse build() {
+      hhz.demo10.proto.StreamResponse result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -339,8 +339,8 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public StreamResponse buildPartial() {
-      StreamResponse result = new StreamResponse(this);
+    public hhz.demo10.proto.StreamResponse buildPartial() {
+      hhz.demo10.proto.StreamResponse result = new hhz.demo10.proto.StreamResponse(this);
       result.responseInfo_ = responseInfo_;
       onBuilt();
       return result;
@@ -380,16 +380,16 @@ private static final long serialVersionUID = 0L;
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof StreamResponse) {
-        return mergeFrom((StreamResponse)other);
+      if (other instanceof hhz.demo10.proto.StreamResponse) {
+        return mergeFrom((hhz.demo10.proto.StreamResponse)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(StreamResponse other) {
-      if (other == StreamResponse.getDefaultInstance()) return this;
+    public Builder mergeFrom(hhz.demo10.proto.StreamResponse other) {
+      if (other == hhz.demo10.proto.StreamResponse.getDefaultInstance()) return this;
       if (!other.getResponseInfo().isEmpty()) {
         responseInfo_ = other.responseInfo_;
         onChanged();
@@ -409,11 +409,11 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      StreamResponse parsedMessage = null;
+      hhz.demo10.proto.StreamResponse parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (StreamResponse) e.getUnfinishedMessage();
+        parsedMessage = (hhz.demo10.proto.StreamResponse) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -508,12 +508,12 @@ private static final long serialVersionUID = 0L;
   }
 
   // @@protoc_insertion_point(class_scope:hhz.demo10.proto.StreamResponse)
-  private static final StreamResponse DEFAULT_INSTANCE;
+  private static final hhz.demo10.proto.StreamResponse DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new StreamResponse();
+    DEFAULT_INSTANCE = new hhz.demo10.proto.StreamResponse();
   }
 
-  public static StreamResponse getDefaultInstance() {
+  public static hhz.demo10.proto.StreamResponse getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
@@ -538,7 +538,7 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public StreamResponse getDefaultInstanceForType() {
+  public hhz.demo10.proto.StreamResponse getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

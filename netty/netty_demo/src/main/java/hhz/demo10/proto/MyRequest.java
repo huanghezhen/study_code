@@ -84,7 +84,7 @@ private static final long serialVersionUID = 0L;
       internalGetFieldAccessorTable() {
     return hhz.demo10.proto.StudentProto.internal_static_hhz_demo10_proto_MyRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            MyRequest.class, Builder.class);
+            hhz.demo10.proto.MyRequest.class, hhz.demo10.proto.MyRequest.Builder.class);
   }
 
   public static final int USERNAME_FIELD_NUMBER = 1;
@@ -160,10 +160,10 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof MyRequest)) {
+    if (!(obj instanceof hhz.demo10.proto.MyRequest)) {
       return super.equals(obj);
     }
-    MyRequest other = (MyRequest) obj;
+    hhz.demo10.proto.MyRequest other = (hhz.demo10.proto.MyRequest) obj;
 
     if (!getUsername()
         .equals(other.getUsername())) return false;
@@ -185,69 +185,69 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static MyRequest parseFrom(
+  public static hhz.demo10.proto.MyRequest parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static MyRequest parseFrom(
+  public static hhz.demo10.proto.MyRequest parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static MyRequest parseFrom(
+  public static hhz.demo10.proto.MyRequest parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static MyRequest parseFrom(
+  public static hhz.demo10.proto.MyRequest parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static MyRequest parseFrom(byte[] data)
+  public static hhz.demo10.proto.MyRequest parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static MyRequest parseFrom(
+  public static hhz.demo10.proto.MyRequest parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static MyRequest parseFrom(java.io.InputStream input)
+  public static hhz.demo10.proto.MyRequest parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static MyRequest parseFrom(
+  public static hhz.demo10.proto.MyRequest parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static MyRequest parseDelimitedFrom(java.io.InputStream input)
+  public static hhz.demo10.proto.MyRequest parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static MyRequest parseDelimitedFrom(
+  public static hhz.demo10.proto.MyRequest parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static MyRequest parseFrom(
+  public static hhz.demo10.proto.MyRequest parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static MyRequest parseFrom(
+  public static hhz.demo10.proto.MyRequest parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -260,7 +260,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(MyRequest prototype) {
+  public static Builder newBuilder(hhz.demo10.proto.MyRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   @java.lang.Override
@@ -271,7 +271,7 @@ private static final long serialVersionUID = 0L;
 
   @java.lang.Override
   protected Builder newBuilderForType(
-      BuilderParent parent) {
+      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
@@ -292,7 +292,7 @@ private static final long serialVersionUID = 0L;
         internalGetFieldAccessorTable() {
       return hhz.demo10.proto.StudentProto.internal_static_hhz_demo10_proto_MyRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              MyRequest.class, Builder.class);
+              hhz.demo10.proto.MyRequest.class, hhz.demo10.proto.MyRequest.Builder.class);
     }
 
     // Construct using hhz.demo10.proto.MyRequest.newBuilder()
@@ -301,7 +301,7 @@ private static final long serialVersionUID = 0L;
     }
 
     private Builder(
-        BuilderParent parent) {
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
@@ -325,13 +325,13 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public MyRequest getDefaultInstanceForType() {
-      return MyRequest.getDefaultInstance();
+    public hhz.demo10.proto.MyRequest getDefaultInstanceForType() {
+      return hhz.demo10.proto.MyRequest.getDefaultInstance();
     }
 
     @java.lang.Override
-    public MyRequest build() {
-      MyRequest result = buildPartial();
+    public hhz.demo10.proto.MyRequest build() {
+      hhz.demo10.proto.MyRequest result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -339,8 +339,8 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public MyRequest buildPartial() {
-      MyRequest result = new MyRequest(this);
+    public hhz.demo10.proto.MyRequest buildPartial() {
+      hhz.demo10.proto.MyRequest result = new hhz.demo10.proto.MyRequest(this);
       result.username_ = username_;
       onBuilt();
       return result;
@@ -380,16 +380,16 @@ private static final long serialVersionUID = 0L;
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof MyRequest) {
-        return mergeFrom((MyRequest)other);
+      if (other instanceof hhz.demo10.proto.MyRequest) {
+        return mergeFrom((hhz.demo10.proto.MyRequest)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(MyRequest other) {
-      if (other == MyRequest.getDefaultInstance()) return this;
+    public Builder mergeFrom(hhz.demo10.proto.MyRequest other) {
+      if (other == hhz.demo10.proto.MyRequest.getDefaultInstance()) return this;
       if (!other.getUsername().isEmpty()) {
         username_ = other.username_;
         onChanged();
@@ -409,11 +409,11 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      MyRequest parsedMessage = null;
+      hhz.demo10.proto.MyRequest parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (MyRequest) e.getUnfinishedMessage();
+        parsedMessage = (hhz.demo10.proto.MyRequest) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -508,12 +508,12 @@ private static final long serialVersionUID = 0L;
   }
 
   // @@protoc_insertion_point(class_scope:hhz.demo10.proto.MyRequest)
-  private static final MyRequest DEFAULT_INSTANCE;
+  private static final hhz.demo10.proto.MyRequest DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new MyRequest();
+    DEFAULT_INSTANCE = new hhz.demo10.proto.MyRequest();
   }
 
-  public static MyRequest getDefaultInstance() {
+  public static hhz.demo10.proto.MyRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
@@ -538,7 +538,7 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public MyRequest getDefaultInstanceForType() {
+  public hhz.demo10.proto.MyRequest getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

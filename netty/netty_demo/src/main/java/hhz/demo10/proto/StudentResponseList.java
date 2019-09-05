@@ -52,11 +52,11 @@ private static final long serialVersionUID = 0L;
             break;
           case 10: {
             if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-              studentResponse_ = new java.util.ArrayList<StudentResponse>();
+              studentResponse_ = new java.util.ArrayList<hhz.demo10.proto.StudentResponse>();
               mutable_bitField0_ |= 0x00000001;
             }
             studentResponse_.add(
-                input.readMessage(StudentResponse.parser(), extensionRegistry));
+                input.readMessage(hhz.demo10.proto.StudentResponse.parser(), extensionRegistry));
             break;
           }
           default: {
@@ -83,23 +83,23 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return StudentProto.internal_static_hhz_demo10_proto_StudentResponseList_descriptor;
+    return hhz.demo10.proto.StudentProto.internal_static_hhz_demo10_proto_StudentResponseList_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return StudentProto.internal_static_hhz_demo10_proto_StudentResponseList_fieldAccessorTable
+    return hhz.demo10.proto.StudentProto.internal_static_hhz_demo10_proto_StudentResponseList_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            StudentResponseList.class, Builder.class);
+            hhz.demo10.proto.StudentResponseList.class, hhz.demo10.proto.StudentResponseList.Builder.class);
   }
 
-  public static final int                 STUDENTRESPONSE_FIELD_NUMBER = 1;
-  private java.util.List<StudentResponse> studentResponse_;
+  public static final int STUDENTRESPONSE_FIELD_NUMBER = 1;
+  private java.util.List<hhz.demo10.proto.StudentResponse> studentResponse_;
   /**
    * <code>repeated .hhz.demo10.proto.StudentResponse studentResponse = 1;</code>
    */
-  public java.util.List<StudentResponse> getStudentResponseList() {
+  public java.util.List<hhz.demo10.proto.StudentResponse> getStudentResponseList() {
     return studentResponse_;
   }
   /**
@@ -118,7 +118,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <code>repeated .hhz.demo10.proto.StudentResponse studentResponse = 1;</code>
    */
-  public StudentResponse getStudentResponse(int index) {
+  public hhz.demo10.proto.StudentResponse getStudentResponse(int index) {
     return studentResponse_.get(index);
   }
   /**
@@ -169,10 +169,10 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof StudentResponseList)) {
+    if (!(obj instanceof hhz.demo10.proto.StudentResponseList)) {
       return super.equals(obj);
     }
-    StudentResponseList other = (StudentResponseList) obj;
+    hhz.demo10.proto.StudentResponseList other = (hhz.demo10.proto.StudentResponseList) obj;
 
     if (!getStudentResponseList()
         .equals(other.getStudentResponseList())) return false;
@@ -196,69 +196,69 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static StudentResponseList parseFrom(
+  public static hhz.demo10.proto.StudentResponseList parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static StudentResponseList parseFrom(
+  public static hhz.demo10.proto.StudentResponseList parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static StudentResponseList parseFrom(
+  public static hhz.demo10.proto.StudentResponseList parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static StudentResponseList parseFrom(
+  public static hhz.demo10.proto.StudentResponseList parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static StudentResponseList parseFrom(byte[] data)
+  public static hhz.demo10.proto.StudentResponseList parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static StudentResponseList parseFrom(
+  public static hhz.demo10.proto.StudentResponseList parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static StudentResponseList parseFrom(java.io.InputStream input)
+  public static hhz.demo10.proto.StudentResponseList parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static StudentResponseList parseFrom(
+  public static hhz.demo10.proto.StudentResponseList parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static StudentResponseList parseDelimitedFrom(java.io.InputStream input)
+  public static hhz.demo10.proto.StudentResponseList parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static StudentResponseList parseDelimitedFrom(
+  public static hhz.demo10.proto.StudentResponseList parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static StudentResponseList parseFrom(
+  public static hhz.demo10.proto.StudentResponseList parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static StudentResponseList parseFrom(
+  public static hhz.demo10.proto.StudentResponseList parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -271,7 +271,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(StudentResponseList prototype) {
+  public static Builder newBuilder(hhz.demo10.proto.StudentResponseList prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   @java.lang.Override
@@ -282,7 +282,7 @@ private static final long serialVersionUID = 0L;
 
   @java.lang.Override
   protected Builder newBuilderForType(
-      BuilderParent parent) {
+      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
@@ -295,15 +295,15 @@ private static final long serialVersionUID = 0L;
       hhz.demo10.proto.StudentResponseListOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return StudentProto.internal_static_hhz_demo10_proto_StudentResponseList_descriptor;
+      return hhz.demo10.proto.StudentProto.internal_static_hhz_demo10_proto_StudentResponseList_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return StudentProto.internal_static_hhz_demo10_proto_StudentResponseList_fieldAccessorTable
+      return hhz.demo10.proto.StudentProto.internal_static_hhz_demo10_proto_StudentResponseList_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              StudentResponseList.class, Builder.class);
+              hhz.demo10.proto.StudentResponseList.class, hhz.demo10.proto.StudentResponseList.Builder.class);
     }
 
     // Construct using hhz.demo10.proto.StudentResponseList.newBuilder()
@@ -312,7 +312,7 @@ private static final long serialVersionUID = 0L;
     }
 
     private Builder(
-        BuilderParent parent) {
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
@@ -337,17 +337,17 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return StudentProto.internal_static_hhz_demo10_proto_StudentResponseList_descriptor;
+      return hhz.demo10.proto.StudentProto.internal_static_hhz_demo10_proto_StudentResponseList_descriptor;
     }
 
     @java.lang.Override
-    public StudentResponseList getDefaultInstanceForType() {
-      return StudentResponseList.getDefaultInstance();
+    public hhz.demo10.proto.StudentResponseList getDefaultInstanceForType() {
+      return hhz.demo10.proto.StudentResponseList.getDefaultInstance();
     }
 
     @java.lang.Override
-    public StudentResponseList build() {
-      StudentResponseList result = buildPartial();
+    public hhz.demo10.proto.StudentResponseList build() {
+      hhz.demo10.proto.StudentResponseList result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -355,8 +355,8 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public StudentResponseList buildPartial() {
-      StudentResponseList result = new StudentResponseList(this);
+    public hhz.demo10.proto.StudentResponseList buildPartial() {
+      hhz.demo10.proto.StudentResponseList result = new hhz.demo10.proto.StudentResponseList(this);
       int from_bitField0_ = bitField0_;
       if (studentResponseBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
@@ -405,16 +405,16 @@ private static final long serialVersionUID = 0L;
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof StudentResponseList) {
-        return mergeFrom((StudentResponseList)other);
+      if (other instanceof hhz.demo10.proto.StudentResponseList) {
+        return mergeFrom((hhz.demo10.proto.StudentResponseList)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(StudentResponseList other) {
-      if (other == StudentResponseList.getDefaultInstance()) return this;
+    public Builder mergeFrom(hhz.demo10.proto.StudentResponseList other) {
+      if (other == hhz.demo10.proto.StudentResponseList.getDefaultInstance()) return this;
       if (studentResponseBuilder_ == null) {
         if (!other.studentResponse_.isEmpty()) {
           if (studentResponse_.isEmpty()) {
@@ -456,11 +456,11 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      StudentResponseList parsedMessage = null;
+      hhz.demo10.proto.StudentResponseList parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (StudentResponseList) e.getUnfinishedMessage();
+        parsedMessage = (hhz.demo10.proto.StudentResponseList) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -471,22 +471,22 @@ private static final long serialVersionUID = 0L;
     }
     private int bitField0_;
 
-    private java.util.List<StudentResponse> studentResponse_ =
+    private java.util.List<hhz.demo10.proto.StudentResponse> studentResponse_ =
       java.util.Collections.emptyList();
     private void ensureStudentResponseIsMutable() {
       if (!((bitField0_ & 0x00000001) != 0)) {
-        studentResponse_ = new java.util.ArrayList<StudentResponse>(studentResponse_);
+        studentResponse_ = new java.util.ArrayList<hhz.demo10.proto.StudentResponse>(studentResponse_);
         bitField0_ |= 0x00000001;
        }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        StudentResponse, StudentResponse.Builder, hhz.demo10.proto.StudentResponseOrBuilder> studentResponseBuilder_;
+        hhz.demo10.proto.StudentResponse, hhz.demo10.proto.StudentResponse.Builder, hhz.demo10.proto.StudentResponseOrBuilder> studentResponseBuilder_;
 
     /**
      * <code>repeated .hhz.demo10.proto.StudentResponse studentResponse = 1;</code>
      */
-    public java.util.List<StudentResponse> getStudentResponseList() {
+    public java.util.List<hhz.demo10.proto.StudentResponse> getStudentResponseList() {
       if (studentResponseBuilder_ == null) {
         return java.util.Collections.unmodifiableList(studentResponse_);
       } else {
@@ -506,7 +506,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>repeated .hhz.demo10.proto.StudentResponse studentResponse = 1;</code>
      */
-    public StudentResponse getStudentResponse(int index) {
+    public hhz.demo10.proto.StudentResponse getStudentResponse(int index) {
       if (studentResponseBuilder_ == null) {
         return studentResponse_.get(index);
       } else {
@@ -517,7 +517,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .hhz.demo10.proto.StudentResponse studentResponse = 1;</code>
      */
     public Builder setStudentResponse(
-        int index, StudentResponse value) {
+        int index, hhz.demo10.proto.StudentResponse value) {
       if (studentResponseBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -534,7 +534,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .hhz.demo10.proto.StudentResponse studentResponse = 1;</code>
      */
     public Builder setStudentResponse(
-        int index, StudentResponse.Builder builderForValue) {
+        int index, hhz.demo10.proto.StudentResponse.Builder builderForValue) {
       if (studentResponseBuilder_ == null) {
         ensureStudentResponseIsMutable();
         studentResponse_.set(index, builderForValue.build());
@@ -547,7 +547,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>repeated .hhz.demo10.proto.StudentResponse studentResponse = 1;</code>
      */
-    public Builder addStudentResponse(StudentResponse value) {
+    public Builder addStudentResponse(hhz.demo10.proto.StudentResponse value) {
       if (studentResponseBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -564,7 +564,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .hhz.demo10.proto.StudentResponse studentResponse = 1;</code>
      */
     public Builder addStudentResponse(
-        int index, StudentResponse value) {
+        int index, hhz.demo10.proto.StudentResponse value) {
       if (studentResponseBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -581,7 +581,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .hhz.demo10.proto.StudentResponse studentResponse = 1;</code>
      */
     public Builder addStudentResponse(
-        StudentResponse.Builder builderForValue) {
+        hhz.demo10.proto.StudentResponse.Builder builderForValue) {
       if (studentResponseBuilder_ == null) {
         ensureStudentResponseIsMutable();
         studentResponse_.add(builderForValue.build());
@@ -595,7 +595,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .hhz.demo10.proto.StudentResponse studentResponse = 1;</code>
      */
     public Builder addStudentResponse(
-        int index, StudentResponse.Builder builderForValue) {
+        int index, hhz.demo10.proto.StudentResponse.Builder builderForValue) {
       if (studentResponseBuilder_ == null) {
         ensureStudentResponseIsMutable();
         studentResponse_.add(index, builderForValue.build());
@@ -609,7 +609,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .hhz.demo10.proto.StudentResponse studentResponse = 1;</code>
      */
     public Builder addAllStudentResponse(
-        java.lang.Iterable<? extends StudentResponse> values) {
+        java.lang.Iterable<? extends hhz.demo10.proto.StudentResponse> values) {
       if (studentResponseBuilder_ == null) {
         ensureStudentResponseIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(
@@ -649,7 +649,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>repeated .hhz.demo10.proto.StudentResponse studentResponse = 1;</code>
      */
-    public StudentResponse.Builder getStudentResponseBuilder(
+    public hhz.demo10.proto.StudentResponse.Builder getStudentResponseBuilder(
         int index) {
       return getStudentResponseFieldBuilder().getBuilder(index);
     }
@@ -677,31 +677,31 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>repeated .hhz.demo10.proto.StudentResponse studentResponse = 1;</code>
      */
-    public StudentResponse.Builder addStudentResponseBuilder() {
+    public hhz.demo10.proto.StudentResponse.Builder addStudentResponseBuilder() {
       return getStudentResponseFieldBuilder().addBuilder(
-          StudentResponse.getDefaultInstance());
+          hhz.demo10.proto.StudentResponse.getDefaultInstance());
     }
     /**
      * <code>repeated .hhz.demo10.proto.StudentResponse studentResponse = 1;</code>
      */
-    public StudentResponse.Builder addStudentResponseBuilder(
+    public hhz.demo10.proto.StudentResponse.Builder addStudentResponseBuilder(
         int index) {
       return getStudentResponseFieldBuilder().addBuilder(
-          index, StudentResponse.getDefaultInstance());
+          index, hhz.demo10.proto.StudentResponse.getDefaultInstance());
     }
     /**
      * <code>repeated .hhz.demo10.proto.StudentResponse studentResponse = 1;</code>
      */
-    public java.util.List<StudentResponse.Builder>
+    public java.util.List<hhz.demo10.proto.StudentResponse.Builder> 
          getStudentResponseBuilderList() {
       return getStudentResponseFieldBuilder().getBuilderList();
     }
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        StudentResponse, StudentResponse.Builder, hhz.demo10.proto.StudentResponseOrBuilder>
+        hhz.demo10.proto.StudentResponse, hhz.demo10.proto.StudentResponse.Builder, hhz.demo10.proto.StudentResponseOrBuilder> 
         getStudentResponseFieldBuilder() {
       if (studentResponseBuilder_ == null) {
         studentResponseBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-            StudentResponse, StudentResponse.Builder, hhz.demo10.proto.StudentResponseOrBuilder>(
+            hhz.demo10.proto.StudentResponse, hhz.demo10.proto.StudentResponse.Builder, hhz.demo10.proto.StudentResponseOrBuilder>(
                 studentResponse_,
                 ((bitField0_ & 0x00000001) != 0),
                 getParentForChildren(),
@@ -727,12 +727,12 @@ private static final long serialVersionUID = 0L;
   }
 
   // @@protoc_insertion_point(class_scope:hhz.demo10.proto.StudentResponseList)
-  private static final StudentResponseList DEFAULT_INSTANCE;
+  private static final hhz.demo10.proto.StudentResponseList DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new StudentResponseList();
+    DEFAULT_INSTANCE = new hhz.demo10.proto.StudentResponseList();
   }
 
-  public static StudentResponseList getDefaultInstance() {
+  public static hhz.demo10.proto.StudentResponseList getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
@@ -757,7 +757,7 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public StudentResponseList getDefaultInstanceForType() {
+  public hhz.demo10.proto.StudentResponseList getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

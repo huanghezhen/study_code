@@ -10,12 +10,12 @@ public interface StudentResponseListOrBuilder extends
   /**
    * <code>repeated .hhz.demo10.proto.StudentResponse studentResponse = 1;</code>
    */
-  java.util.List<StudentResponse>
+  java.util.List<hhz.demo10.proto.StudentResponse> 
       getStudentResponseList();
   /**
    * <code>repeated .hhz.demo10.proto.StudentResponse studentResponse = 1;</code>
    */
-  StudentResponse getStudentResponse(int index);
+  hhz.demo10.proto.StudentResponse getStudentResponse(int index);
   /**
    * <code>repeated .hhz.demo10.proto.StudentResponse studentResponse = 1;</code>
    */
@@ -23,11 +23,11 @@ public interface StudentResponseListOrBuilder extends
   /**
    * <code>repeated .hhz.demo10.proto.StudentResponse studentResponse = 1;</code>
    */
-  java.util.List<? extends StudentResponseOrBuilder>
+  java.util.List<? extends hhz.demo10.proto.StudentResponseOrBuilder> 
       getStudentResponseOrBuilderList();
   /**
    * <code>repeated .hhz.demo10.proto.StudentResponse studentResponse = 1;</code>
    */
-  StudentResponseOrBuilder getStudentResponseOrBuilder(
-          int index);
+  hhz.demo10.proto.StudentResponseOrBuilder getStudentResponseOrBuilder(
+      int index);
 }

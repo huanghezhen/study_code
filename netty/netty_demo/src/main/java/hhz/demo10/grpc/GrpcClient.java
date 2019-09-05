@@ -25,7 +25,7 @@ public class GrpcClient
 
 
         System.out.println("-------------------------------");
-
+/*
         Iterator<StudentResponse> studentsByAge = blockingStub.getStudentsByAge(StudentRequest.newBuilder().setAge(20).build());
 
         while (studentsByAge.hasNext())
@@ -109,7 +109,7 @@ public class GrpcClient
         catch (InterruptedException e)
         {
             e.printStackTrace();
-        }
+        }*/
 
     }
 }
