@@ -16,10 +16,10 @@ public class NewClient
     public static void main(String[] args)throws  Exception
     {
         SocketChannel socketChannel = SocketChannel.open();
+        socketChannel.connect(new InetSocketAddress("localhost", 8899));
         socketChannel.configureBlocking(true);
-        socketChannel.bind(new InetSocketAddress("localhost", 8899));
 
-        String fileName = "";
+        String fileName = "netty_demo/data/NioTest03.txt";
         FileChannel fileChannel = new FileInputStream(fileName).getChannel();
         long startTime = System.currentTimeMillis();
         long transferCount = fileChannel.transferTo(0, fileChannel.size(), socketChannel);
