@@ -92,6 +92,7 @@ public class NioServer
         {
             byteBuffer.flip();
             request.append(StandardCharsets.UTF_8.decode(byteBuffer));
+            byteBuffer.clear();
         }
         // 4. 将channel再次注册到selector 监听可读事件
         socketChannel.register(selector, SelectionKey.OP_READ);

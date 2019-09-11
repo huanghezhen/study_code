@@ -34,42 +34,46 @@ public class NioClient
         new Thread(() -> {
             try
             {
-                // 获取channel数量
-                int readyChannels = selector.select();
-                if (readyChannels > 0)
+                while (true)
                 {
-                    // 获取可用channel集合
-                    Set<SelectionKey> selectionKeys = selector.selectedKeys();
-                    Iterator<SelectionKey> iterator = selectionKeys.iterator();
-                    while (iterator.hasNext())
+                    // 获取channel数量
+                    int readyChannels = selector.select();
+                    if (readyChannels > 0)
                     {
-                        SelectionKey selectionKey = iterator.next();
-                        // 移除当前key
-                        iterator.remove();
-
-                        if (selectionKey.isReadable())
+                        // 获取可用channel集合
+                        Set<SelectionKey> selectionKeys = selector.selectedKeys();
+                        Iterator<SelectionKey> iterator = selectionKeys.iterator();
+                        while (iterator.hasNext())
                         {
-                            // 可读事件
-                            // 1. selectionKey 获取channel
-                            SocketChannel readChannel = (SocketChannel) selectionKey.channel();
-                            // 2. 创建buffer
-                            ByteBuffer byteBuffer = ByteBuffer.allocate(1024);
-                            // 3. 循环读取服务端请求信息
-                            StringBuilder response = new StringBuilder();
-                            while (readChannel.read(byteBuffer) != 0)
-                            {
-                                byteBuffer.flip();
-                                response.append(StandardCharsets.UTF_8.decode(byteBuffer));
-                            }
-                            // 4. 将channel再次注册到selector 监听可读事件
-                            readChannel.register(selector, SelectionKey.OP_READ);
-                            // 5. 输出服务器发出的信息
-                            if (response.length() > 0)
-                            {
-                                System.out.println(response.toString());
-                            }
-                        }
+                            SelectionKey selectionKey = iterator.next();
+                            // 移除当前key
+                            iterator.remove();
 
+                            if (selectionKey.isReadable())
+                            {
+                                // 可读事件
+                                // 1. selectionKey 获取channel
+                                SocketChannel readChannel = (SocketChannel) selectionKey.channel();
+                                // 2. 创建buffer
+                                ByteBuffer byteBuffer = ByteBuffer.allocate(1024);
+                                // 3. 循环读取服务端请求信息
+                                StringBuilder response = new StringBuilder();
+                                while (readChannel.read(byteBuffer) != 0)
+                                {
+                                    byteBuffer.flip();
+                                    response.append(StandardCharsets.UTF_8.decode(byteBuffer));
+                                    byteBuffer.clear();
+                                }
+                                // 4. 将channel再次注册到selector 监听可读事件
+                                readChannel.register(selector, SelectionKey.OP_READ);
+                                // 5. 输出服务器发出的信息
+                                if (response.length() > 0)
+                                {
+                                    System.out.println(response.toString());
+                                }
+                            }
+
+                        }
                     }
                 }
             }
