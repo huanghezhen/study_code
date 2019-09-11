@@ -1,7 +1,6 @@
 package hhz;
 
-import java.io.OutputStream;
-import java.io.PrintWriter;
+import java.io.*;
 import java.net.Socket;
 
 /**
@@ -19,9 +18,23 @@ public class Client
         PrintWriter printWriter = new PrintWriter(outputStream);
         printWriter.write("hhhhhh");
         printWriter.flush();
-
         socket.shutdownOutput();
 
+
+        InputStream inputStream = socket.getInputStream();
+        InputStreamReader inputStreamReader = new InputStreamReader(inputStream);
+        BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
+        String info = bufferedReader.readLine();
+        while (info != null)
+        {
+            System.out.println(info);
+            info = bufferedReader.readLine();
+        }
+        socket.shutdownInput();
+
+        bufferedReader.close();
+        inputStreamReader.close();
+        inputStream.close();
         printWriter.close();
         outputStream.close();
         socket.close();
