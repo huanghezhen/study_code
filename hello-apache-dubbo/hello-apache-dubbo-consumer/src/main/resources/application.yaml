@@ -1,0 +1,29 @@
+spring:
+  application:
+    name: dubbo-consumer
+  main:
+    allow-bean-definition-overriding: true
+dubbo:
+  scan:
+    base-packages: com.funtl.apache.dubbo.consumer.controller
+  protocol:
+    name: dubbo
+    port: -1
+    serialization: kryo
+  registry:
+    address: nacos://192.168.197.146:8848
+server:
+  port: 8080
+endpoints:
+  dubbo:
+    enabled: true
+management:
+  health:
+    dubbo:
+      status:
+        defaults: memory
+        extras: threadpool
+  endpoints:
+    web:
+      exposure:
+        include: "*"
