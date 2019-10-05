@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: service-consumer
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.197.146:8848
+      config:
+        server-addr: 192.168.197.146:8848
+    sentinel:
+      transport:
+        dashboard: 192.168.197.146:8888
+feign:
+  sentinel:
+    enabled: true
+server:
+  port: 8081
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
