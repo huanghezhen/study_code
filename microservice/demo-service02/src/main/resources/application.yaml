@@ -1,0 +1,9 @@
+server:
+  port: 8082
+spring:
+  application:
+    name: service02
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.197.159:8848
