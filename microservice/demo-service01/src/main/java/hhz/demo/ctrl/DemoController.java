@@ -1,5 +1,7 @@
 package hhz.demo.ctrl;
 
+import hhz.demo.service.iface.FeignService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -14,6 +16,15 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class DemoController
 {
+    @Autowired
+    private FeignService feignService;
+
+    @RequestMapping(value = "/echoService2/{string}", method = RequestMethod.GET)
+    public String echoService2(@PathVariable String string) {
+
+        return feignService.echo(string);
+    }
+
     @RequestMapping(value = "/echo/{string}", method = RequestMethod.GET)
     public String echo(@PathVariable String string) {
         return "service01 " + string;

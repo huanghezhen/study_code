@@ -6,4 +6,9 @@ spring:
   cloud:
     nacos:
       discovery:
-        server-addr: 192.168.197.159:8848
+        server-addr: wangtt.top:8848
+    sentinel:
+      transport:
+        dashboard: wangtt.top:8089
+
+

@@ -18,9 +18,9 @@
         <java.version>1.8</java.version>
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>
-
         <org.springframework.boot.version>2.1.7.RELEASE</org.springframework.boot.version>
         <com.alibaba.cloud.version>2.1.0.RELEASE</com.alibaba.cloud.version>
+        <org.springframework.cloud.openfeign.version>2.1.0.RELEASE</org.springframework.cloud.openfeign.version>
     </properties>
     <dependencies>
         <dependency>
@@ -32,6 +32,16 @@
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
             <version>${com.alibaba.cloud.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-sentinel</artifactId>
+            <version>${com.alibaba.cloud.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-openfeign</artifactId>
+            <version>${org.springframework.cloud.openfeign.version}</version>
         </dependency>
     </dependencies>
 

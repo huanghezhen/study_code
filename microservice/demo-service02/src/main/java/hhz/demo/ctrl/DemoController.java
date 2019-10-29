@@ -26,7 +26,6 @@ public class DemoController
 
     @RequestMapping(value = "/echoService01/{string}", method = RequestMethod.GET)
     public String echoService01(@PathVariable String string) {
-
         return demoService.echoService01(string);
     }
 }
