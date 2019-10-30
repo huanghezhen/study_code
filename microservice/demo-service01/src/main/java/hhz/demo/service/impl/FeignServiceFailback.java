@@ -1,6 +1,7 @@
 package hhz.demo.service.impl;
 
 import hhz.demo.service.iface.FeignService;
+import org.springframework.stereotype.Component;
 
 /**
  * @ClassName: FeignServiceFailback
@@ -8,6 +9,7 @@ import hhz.demo.service.iface.FeignService;
  * @author: huanghz
  * @date: 2019/10/29 下午 03:59
  */
+@Component
 public class FeignServiceFailback implements FeignService
 {
     @Override

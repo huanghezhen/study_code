@@ -10,5 +10,7 @@ spring:
     sentinel:
       transport:
         dashboard: wangtt.top:8089
-
+feign:
+  sentinel:
+    enabled: true
 
