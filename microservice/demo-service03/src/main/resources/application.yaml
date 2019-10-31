@@ -1,9 +1,2 @@
 server:
   port: 8083
-spring:
-  application:
-    name: service03
-  cloud:
-    nacos:
-      discovery:
-        server-addr: 192.168.1.233:8848
