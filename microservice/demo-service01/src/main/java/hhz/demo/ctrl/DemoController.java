@@ -19,8 +19,8 @@ public class DemoController
     @Autowired
     private FeignService feignService;
 
-    @RequestMapping(value = "/echoService2/{string}", method = RequestMethod.GET)
-    public String echoService2(@PathVariable String string) {
+    @RequestMapping(value = "/echoService02/{string}", method = RequestMethod.GET)
+    public String echoService02(@PathVariable String string) {
 
         return feignService.echo(string);
     }

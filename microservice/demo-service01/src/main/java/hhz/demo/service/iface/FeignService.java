@@ -4,6 +4,8 @@ import hhz.demo.service.impl.FeignServiceFailback;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 /**
  * @ClassName: FeignService
@@ -11,9 +13,9 @@ import org.springframework.web.bind.annotation.PathVariable;
  * @author: huanghz
  * @date: 2019/10/29 上午 03:47
  */
-@FeignClient(value = "service02" , fallback = FeignServiceFailback.class)
+@FeignClient(value = "service02")
 public interface FeignService
 {
-    @GetMapping("/echo/{string}")
-    String echo(@PathVariable("string") String string);
+    @RequestMapping(value = "/echo/{string}", method = RequestMethod.GET)
+    String echo(@PathVariable String string);
 }

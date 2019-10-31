@@ -6,11 +6,9 @@ spring:
   cloud:
     nacos:
       discovery:
-        server-addr: wangtt.top:8848
+        server-addr: nacos.dev.wangtt.top:80
     sentinel:
       transport:
-        dashboard: wangtt.top:8089
-feign:
-  sentinel:
-    enabled: true
+        dashboard: sentinel.dev.wangtt.top:80
+
 

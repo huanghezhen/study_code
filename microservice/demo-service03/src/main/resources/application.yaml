@@ -7,3 +7,5 @@ spring:
     nacos:
       discovery:
         server-addr: wangtt.top:8848
+      config:
+        server-addr: wangtt.top:8848
