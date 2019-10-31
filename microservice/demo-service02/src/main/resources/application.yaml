@@ -10,3 +10,7 @@ spring:
     sentinel:
       transport:
         dashboard: 192.168.1.233:8089
+
+feign:
+  sentinel:
+    enabled: true

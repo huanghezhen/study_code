@@ -2,7 +2,10 @@ package hhz.demo.ctrl;
 
 import hhz.demo.service.iface.FeignService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.client.RestTemplate;
 
 /**
  * @ClassName: TestController
@@ -16,17 +19,26 @@ public class DemoController
     @Autowired
     private FeignService feignService;
 
+    private final RestTemplate restTemplate;
+
+    @Autowired
+    public DemoController(RestTemplate restTemplate) {this.restTemplate = restTemplate;}
+
+
     @GetMapping("/echo/{data}")
     public String echo(@PathVariable String data)
     {
         return "service01 " + data;
     }
 
+    @GetMapping("/echoService02/{data}")
+    public String echoService02(@PathVariable String data) {
+        return restTemplate.getForObject("http://service02/echo/" + data, String.class);
+    }
 
-    @RequestMapping(value = "/echoService02/{string}", method = RequestMethod.GET)
-    public String echoService02(@PathVariable String string) {
-
-        return feignService.echo(string);
+    @GetMapping("/echoFeignService02/{data}")
+    public String echoFeignService02(@PathVariable String data) {
+        return feignService.echo(data);
     }
 
 }

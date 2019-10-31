@@ -1,10 +1,7 @@
 package hhz.demo.ctrl;
 
-import hhz.demo.service.impl.DemoService;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -16,16 +13,10 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class DemoController
 {
-    @Autowired
-    private DemoService demoService;
 
-    @RequestMapping(value = "/echo/{string}", method = RequestMethod.GET)
+    @GetMapping("/echo/{string}")
     public String echo(@PathVariable String string) {
         return "service02 " + string;
     }
 
-    @RequestMapping(value = "/echoService01/{string}", method = RequestMethod.GET)
-    public String echoService01(@PathVariable String string) {
-        return demoService.echoService01(string);
-    }
 }
