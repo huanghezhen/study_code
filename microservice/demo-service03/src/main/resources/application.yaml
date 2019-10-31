@@ -6,6 +6,4 @@ spring:
   cloud:
     nacos:
       discovery:
-        server-addr: wangtt.top:8848
-      config:
-        server-addr: wangtt.top:8848
+        server-addr: 192.168.1.233:8848
