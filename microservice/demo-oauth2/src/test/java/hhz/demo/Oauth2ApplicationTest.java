@@ -18,6 +18,6 @@ public class Oauth2ApplicationTest
 {
     @Test
     public void testBCryptPasswordEncoder() {
-        System.out.println(new BCryptPasswordEncoder().encode("secret"));
+        System.out.println(new BCryptPasswordEncoder().encode("admin888"));
     }
 }
