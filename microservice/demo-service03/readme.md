@@ -1,3 +1,3 @@
-demo-service03
-demo-service04
-demo-service-api
+1. demo-service03
+2. demo-service04
+3. demo-service-api
