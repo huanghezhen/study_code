@@ -29,15 +29,23 @@ public class Demo1MainServiceImpl implements Demo1MainService {
 
     @GlobalTransactional
     @Override
-    public int updateMoney() {
+    public int updateMoney(int id) {
         // demo1
-        mapper.updateMoney();
+        //int demoCount1 = mapper.updateMoney();
         // demo2
-        demo2Service.updateMoney();
+        int demoCount2 = demo2Service.updateMoney();
         // demo3
-        demo3Service.updateMoney();
+        int demoCount3 = demo3Service.updateMoney();
 
-        if (true) {
+        System.out.println(id+"    demoCount1: 0"+" demoCount2: "+demoCount2+" demoCount3: "+demoCount3);
+        if (1 == id) {
+            System.out.println("1 start-------------------");
+            try {
+                Thread.sleep(1000*60);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            System.out.println("1 end-------------------");
             throw new RuntimeException();
         }
         return 0;

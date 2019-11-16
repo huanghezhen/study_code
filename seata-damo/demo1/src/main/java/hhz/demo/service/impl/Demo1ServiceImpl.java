@@ -17,7 +17,6 @@ public class Demo1ServiceImpl implements Demo1Service {
     private Demo1Mapper demo1Mapper;
     @Override
     public int updateMoney() {
-        demo1Mapper.updateMoney();
-        return 0;
+        return demo1Mapper.updateMoney();
     }
 }

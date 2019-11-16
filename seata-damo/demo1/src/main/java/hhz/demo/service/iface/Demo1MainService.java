@@ -7,5 +7,5 @@ package hhz.demo.service.iface;
  * @date: 2019/11/16 0016 16:46
  */
 public interface Demo1MainService {
-    int updateMoney();
+    int updateMoney(int id);
 }

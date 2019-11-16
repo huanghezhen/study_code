@@ -19,7 +19,6 @@ public class Demo3ServiceImpl implements Demo3Service {
 
     @Override
     public int updateMoney() {
-        demo3Mapper.updateMoney();
-        return 0;
+        return demo3Mapper.updateMoney();
     }
 }
