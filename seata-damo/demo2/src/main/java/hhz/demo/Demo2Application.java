@@ -1,5 +1,6 @@
 package hhz.demo;
 
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -10,6 +11,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @date: 2019/10/27 下午 04:57
  */
 @SpringBootApplication
+@MapperScan(value = {"hhz.demo.dao"})
 public class Demo2Application
 {
     public static void main(String[] args)
