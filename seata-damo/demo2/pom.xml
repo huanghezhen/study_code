@@ -9,8 +9,8 @@
         <version>2.1.7.RELEASE</version>
         <relativePath/>
     </parent>
-    <groupId>hhz.demo</groupId>
-    <artifactId>demo-service05</artifactId>
+    <groupId>hhz</groupId>
+    <artifactId>demo2</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <properties>
@@ -22,7 +22,7 @@
     <dependencies>
         <dependency>
             <groupId>hhz.demo</groupId>
-            <artifactId>demo-service-api</artifactId>
+            <artifactId>demo-api</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
 
@@ -78,6 +78,19 @@
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
             <version>5.1.46</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.mybatis.spring.boot</groupId>
+            <artifactId>mybatis-spring-boot-starter</artifactId>
+            <version>1.3.2</version>
+        </dependency>
+
+
+        <dependency>
+            <groupId>io.seata</groupId>
+            <artifactId>seata-all</artifactId>
+            <version>0.9.0</version>
         </dependency>
     </dependencies>
 </project>

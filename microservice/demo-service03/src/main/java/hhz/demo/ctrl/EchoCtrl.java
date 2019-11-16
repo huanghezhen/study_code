@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class EchoCtrl
 {
-    @Reference(version = "1.0.0")
+    @Reference(version = "1.0.0",check = false)
     private EchoService echoService;
 
     @GetMapping("/echo/{data}")
