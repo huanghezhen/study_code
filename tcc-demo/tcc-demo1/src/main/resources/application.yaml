@@ -1,0 +1,50 @@
+server:
+  port: 8081
+
+spring:
+  application:
+    name: tcc-demo1
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://192.168.1.233:3307/tccdemo1?useUnicode=true&characterEncoding=utf-8&useSSL=false
+    username: root
+    password: 123456
+    hikari:
+      minimum-idle: 5
+      idle-timeout: 600000
+      maximum-pool-size: 10
+      auto-commit: true
+      pool-name: MyHikariCP
+      max-lifetime: 1800000
+      connection-timeout: 30000
+      connection-test-query: SELECT 1
+dubbo:
+  scan:
+    base-packages: hhz.demo
+  protocol:
+    name: dubbo
+    port: -1
+    serialization: kryo
+  registry:
+    address: nacos://192.168.1.233:8848
+  provider:
+    loadbalance: roundrobin
+
+
+
+org:
+  dromara:
+    hmily:
+      serializer: kryo
+      recoverDelayTime: 128
+      retryMax: 30
+      scheduledDelay: 128
+      scheduledThreadMax: 10
+      repositorySupport: db
+      started: true
+      hmilyDbConfig:
+        driverClassName: com.mysql.jdbc.Driver
+        url: jdbc:mysql://192.168.1.233:3307/hmily?useUnicode=true&characterEncoding=utf-8&useSSL=false
+        username: root
+        password: 123456

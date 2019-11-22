@@ -24,7 +24,7 @@ public class Demo1Ctrl {
         try {
             demo1MainService.updateMoney(id);
         } catch (Exception e) {
-            //e.printStackTrace();
+            e.printStackTrace();
             ret += " 异常!!!!!";
             System.out.println("异常!!!!!");
         }
