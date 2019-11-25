@@ -39,9 +39,11 @@ public class BIOService {
 
 
     /**
-     * 编写一个handler方法 和客户端通信
-     *
-     * @param socket
+     * @Description: 编写一个handler方法 和客户端通信
+     * @Param: [socket]
+     * @Return: void
+     * @Author: huanghz
+     * @Date: 2019/11/25 9:10
      */
     private static void handler(Socket socket) {
         try {
