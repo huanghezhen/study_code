@@ -22,15 +22,10 @@ public class ChatClient {
     public static void main(String[] args) throws Exception {
         Scanner scanner = new Scanner(System.in);
         SocketChannel socketChannel = SocketChannel.open();
-        socketChannel.configureBlocking(false);
         // 绑定服务端
         InetSocketAddress inetSocketAddress = new InetSocketAddress("127.0.0.1", 8888);
-        if (!socketChannel.connect(inetSocketAddress)) {
-            while (!socketChannel.finishConnect()) {
-                System.out.println("正在连接,非阻塞,可以处理其他事情");
-            }
-        }
-
+        socketChannel.connect(inetSocketAddress);
+        socketChannel.configureBlocking(false);
         Selector selector = Selector.open();
         socketChannel.register(selector, SelectionKey.OP_READ, ByteBuffer.allocate(1024));
         System.out.println("连接成功!");
@@ -53,6 +48,7 @@ public class ChatClient {
                             // 当事件是 读 事件 的时候  获取数据
 
                             SocketChannel channel = (SocketChannel) selectionKey.channel();
+
                             // 获取绑定的内容
                             ByteBuffer byteBuffer = (ByteBuffer) selectionKey.attachment();
                             // 将数据读取到buffer

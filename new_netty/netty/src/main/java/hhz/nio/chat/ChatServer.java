@@ -62,9 +62,9 @@ public class ChatServer {
                     // 将buffer打印出来
                     String str = "from " + socketChannel.getRemoteAddress() + " : " + new String(byteBuffer.array());
                     System.out.println(str);
-                    byteBuffer.clear();
 
                     socketChannel.write(ByteBuffer.wrap(str.getBytes()));
+                    byteBuffer.clear();
                 }
                 // 将处理好的事件删除
                 iterator.remove();
