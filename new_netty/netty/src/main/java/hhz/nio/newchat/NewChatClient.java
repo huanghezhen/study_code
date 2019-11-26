@@ -79,6 +79,10 @@ public class NewChatClient {
         try {
             while (true) {
                 String str = scanner.nextLine();
+                if (str.getBytes().length > 1024) {
+                    System.out.println("警告: 如数字符串过长!");
+                    continue;
+                }
                 ByteBuffer buffer = ByteBuffer.wrap(str.getBytes());
                 socketChannel.write(buffer);
             }
