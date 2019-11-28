@@ -24,7 +24,7 @@ public class HttpServer {
                     .channel(NioServerSocketChannel.class)
                     .childHandler(new HttpServerInitializer());
 
-            ChannelFuture sync = bootstrap.bind(6666).sync();
+            ChannelFuture sync = bootstrap.bind(8888).sync();
 
             sync.channel().closeFuture().sync();
         } catch (InterruptedException e) {
