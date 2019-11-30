@@ -15,7 +15,7 @@ public class NettyByteBuf01 {
 
 
         for (int i = 0; i < 5; i++) {
-            buffer.writeByte(i);
+             buffer.writeByte(i);
         }
 
         for (int i = 0; i < buffer.writerIndex(); i++) {
