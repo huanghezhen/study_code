@@ -61,7 +61,6 @@ public class NettyClient {
         } catch (Exception e) {
             e.printStackTrace();
         }finally {
-            group.shutdownGracefully();
         }
 
     }
