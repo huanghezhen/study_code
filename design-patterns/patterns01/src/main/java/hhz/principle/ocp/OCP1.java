@@ -1,4 +1,4 @@
-package hhz.ocp;
+package hhz.principle.ocp;
 
 /**
  * huanghz

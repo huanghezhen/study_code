@@ -1,4 +1,4 @@
-package hhz.liskov;
+package hhz.principle.liskov;
 
 /**
  * huanghz

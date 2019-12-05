@@ -1,4 +1,4 @@
-package hhz.segregation;
+package hhz.principle.segregation;
 
 /**
  * huanghz

@@ -1,4 +1,4 @@
-package hhz.singleresponsibility;
+package hhz.principle.singleresponsibility;
 
 /**
  * huanghz

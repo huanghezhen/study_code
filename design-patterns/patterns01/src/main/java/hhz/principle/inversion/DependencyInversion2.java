@@ -1,4 +1,4 @@
-package hhz.inversion;
+package hhz.principle.inversion;
 
 /**
  * huanghz
