@@ -1,8 +1,10 @@
 package hhz.service.impl;
 
 import hhz.dao.UserMapper;
+import hhz.service.iface.DemoApiService;
 import hhz.service.iface.DemoService;
 import org.apache.servicecomb.pack.omega.context.annotations.SagaStart;
+import org.apache.servicecomb.provider.pojo.RpcReference;
 import org.apache.servicecomb.provider.springmvc.reference.RestTemplateBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -23,6 +25,9 @@ public class DemoServiceImpl implements DemoService {
 
     private RestTemplate template = RestTemplateBuilder.create();
 
+    @RpcReference(microserviceName = "demo2", schemaId = "RpcService")
+    private DemoApiService demoApiService;
+
     @Override
     @SagaStart
     @Transactional
@@ -36,5 +41,10 @@ public class DemoServiceImpl implements DemoService {
 
         System.out.println(stringResponseEntity2.getBody());
         System.out.println(stringResponseEntity3.getBody());
+    }
+
+    @Override
+    public String testRpc() {
+        return demoApiService.getString();
     }
 }

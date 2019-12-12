@@ -28,4 +28,8 @@ public class Demo1Ctrl {
         service.updateMoney();
         return "demo1";
     }
+    @GetMapping("/testRpc")
+    public String testRpc() {
+        return service.testRpc();
+    }
 }

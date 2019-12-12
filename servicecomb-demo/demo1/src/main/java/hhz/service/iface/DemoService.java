@@ -8,4 +8,6 @@ package hhz.service.iface;
  */
 public interface DemoService {
     void updateMoney();
+
+    String testRpc();
 }
