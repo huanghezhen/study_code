@@ -11,5 +11,7 @@ servicecomb:
     address: 0.0.0.0:8083
   handler:
     chain:
+      Consumer:
+        default: loadbalance,pack-consumer
       Provider:
-        default: bizkeeper-provider
+        default: pack-provider

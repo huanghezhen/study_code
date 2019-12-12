@@ -5,6 +5,7 @@ import hhz.service.iface.DemoService;
 import org.apache.servicecomb.pack.omega.transaction.annotations.Compensable;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 /**
  * @ClassName: DemoServiceImpl
@@ -18,6 +19,7 @@ public class DemoServiceImpl implements DemoService {
     private UserMapper userMapper;
     @Override
     @Compensable(compensationMethod = "cancel")
+    @Transactional
     public void updateMoney() {
         System.out.println("demo2 updateMoney");
         userMapper.reduceMoney();

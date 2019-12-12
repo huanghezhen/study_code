@@ -7,6 +7,7 @@ import org.apache.servicecomb.provider.springmvc.reference.RestTemplateBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.client.RestTemplate;
 
 /**
@@ -24,7 +25,9 @@ public class DemoServiceImpl implements DemoService {
 
     @Override
     @SagaStart
+    @Transactional
     public void updateMoney() {
+        userMapper.reduceMoney();
         System.out.println("demo1 updateMoney");
         ResponseEntity<String> stringResponseEntity2 = template.postForEntity(
                 "cse://demo2/updateMoney", null, String.class);
@@ -33,10 +36,5 @@ public class DemoServiceImpl implements DemoService {
 
         System.out.println(stringResponseEntity2.getBody());
         System.out.println(stringResponseEntity3.getBody());
-    }
-
-    public void cancel() {
-        System.out.println("demo1 cancel");
-        userMapper.addMoney();
     }
 }
