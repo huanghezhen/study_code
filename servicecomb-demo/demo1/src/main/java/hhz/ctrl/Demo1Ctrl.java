@@ -1,6 +1,8 @@
 package hhz.ctrl;
 
+import hhz.service.iface.DemoService;
 import org.apache.servicecomb.provider.rest.common.RestSchema;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -14,8 +16,16 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping(path = "/")
 public class Demo1Ctrl {
 
+    @Autowired
+    private DemoService service;
+
     @GetMapping("/echo1")
     public String echo1() {
         return "echo1";
+    }
+    @GetMapping("/updateMoney")
+    public String updateMoney() {
+        service.updateMoney();
+        return "demo1";
     }
 }
