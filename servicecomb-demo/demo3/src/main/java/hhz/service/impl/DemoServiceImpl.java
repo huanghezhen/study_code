@@ -2,7 +2,6 @@ package hhz.service.impl;
 
 import hhz.dao.UserMapper;
 import hhz.service.iface.DemoService;
-import org.apache.servicecomb.pack.omega.context.annotations.SagaStart;
 import org.apache.servicecomb.pack.omega.transaction.annotations.Compensable;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -18,7 +17,6 @@ public class DemoServiceImpl implements DemoService {
     @Autowired
     private UserMapper userMapper;
     @Override
-    @SagaStart
     @Compensable(compensationMethod = "cancel")
     public void updateMoney() {
         System.out.println("demo3 updateMoney");
