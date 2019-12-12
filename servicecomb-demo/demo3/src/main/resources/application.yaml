@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: demo3
+alpha:
+  cluster:
+    address: 192.168.21.129:8089

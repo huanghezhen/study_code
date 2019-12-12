@@ -1,0 +1,15 @@
+APPLICATION_ID: hhz
+service_description:
+  name: demo2
+  version: 0.0.1
+  environment: development
+servicecomb:
+  service:
+    registry:
+      address: http://192.168.21.129:30100
+  rest:
+    address: 0.0.0.0:8082
+  handler:
+    chain:
+      Provider:
+        default: bizkeeper-provider
