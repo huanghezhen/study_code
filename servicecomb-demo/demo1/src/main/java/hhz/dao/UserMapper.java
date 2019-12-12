@@ -10,5 +10,8 @@ import org.apache.ibatis.annotations.Update;
  */
 public interface UserMapper {
     @Update("update user set money = money - 1")
-    int updateMoney();
+    int reduceMoney();
+
+    @Update("update user set money = money + 1")
+    int addMoney();
 }

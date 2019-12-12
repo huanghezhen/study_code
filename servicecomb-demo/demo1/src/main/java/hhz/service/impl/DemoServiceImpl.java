@@ -2,6 +2,8 @@ package hhz.service.impl;
 
 import hhz.dao.UserMapper;
 import hhz.service.iface.DemoService;
+import org.apache.servicecomb.pack.omega.context.annotations.SagaStart;
+import org.apache.servicecomb.pack.omega.transaction.annotations.Compensable;
 import org.apache.servicecomb.provider.springmvc.reference.RestTemplateBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -22,8 +24,11 @@ public class DemoServiceImpl implements DemoService {
     private RestTemplate template = RestTemplateBuilder.create();
 
     @Override
+    @SagaStart
+    @Compensable(compensationMethod = "cancel")
     public void updateMoney() {
-        userMapper.updateMoney();
+        System.out.println("demo1 updateMoney");
+        userMapper.reduceMoney();
 
         ResponseEntity<String> stringResponseEntity2 = template.postForEntity(
                 "cse://demo2/updateMoney", null, String.class);
@@ -32,5 +37,10 @@ public class DemoServiceImpl implements DemoService {
 
         System.out.println(stringResponseEntity2.getBody());
         System.out.println(stringResponseEntity3.getBody());
+    }
+
+    public void cancel() {
+        System.out.println("demo1 cancel");
+        userMapper.addMoney();
     }
 }

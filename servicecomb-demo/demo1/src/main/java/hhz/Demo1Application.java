@@ -1,5 +1,6 @@
 package hhz;
 
+import org.apache.servicecomb.pack.omega.spring.EnableOmega;
 import org.apache.servicecomb.springboot.starter.provider.EnableServiceComb;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
@@ -14,6 +15,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 @EnableServiceComb
 @MapperScan(value = {"hhz.dao"})
+@EnableOmega
 public class Demo1Application {
 
     public static void main(String[] args) {

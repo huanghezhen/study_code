@@ -4,6 +4,7 @@ import hhz.service.iface.DemoService;
 import org.apache.servicecomb.provider.rest.common.RestSchema;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 /**
@@ -23,7 +24,7 @@ public class Demo2Ctrl {
         return "echo2";
     }
 
-    @GetMapping("/updateMoney")
+    @PostMapping("/updateMoney")
     public String updateMoney() {
         service.updateMoney();
         return "demo2";
