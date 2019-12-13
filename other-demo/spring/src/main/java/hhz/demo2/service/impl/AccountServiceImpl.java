@@ -1,8 +1,8 @@
-package hhz.service.impl;
+package hhz.demo2.service.impl;
 
-import hhz.mapper.AccountMapper;
-import hhz.mapper.impl.AccountMapperImpl;
-import hhz.service.AccountService;
+import hhz.demo2.mapper.AccountMapper;
+import hhz.demo2.mapper.impl.AccountMapperImpl;
+import hhz.demo2.service.AccountService;
 
 /**
  * @ClassName: AccountServiceImpl
@@ -13,7 +13,6 @@ import hhz.service.AccountService;
 public class AccountServiceImpl implements AccountService {
 
     private AccountMapper accountMapper = new AccountMapperImpl();
-
     public void saveAccount() {
         accountMapper.saveAccount();
     }

@@ -1,6 +1,6 @@
-package hhz.mapper.impl;
+package hhz.demo2.mapper.impl;
 
-import hhz.mapper.AccountMapper;
+import hhz.demo2.mapper.AccountMapper;
 
 /**
  * @ClassName: AccountMapperImpl

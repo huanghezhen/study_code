@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="accountService" class="hhz.demo2.service.impl.AccountServiceImpl"/>
+    <bean id="accountDao" class="hhz.demo2.mapper.impl.AccountMapperImpl"/>
+
+
+    <!-- 创建bean的三种方式 -->
+    <!-- 1 使用默认构造器创建
+    <bean id="accountService3" class="hhz.demo3.service.impl.AccountServiceImpl"/>
+    -->
+
+    <!-- 2 使用普通工厂中的方法创建
+    <bean id="instanceFactory" class="hhz.demo3.factory.InstanceFactory"/>
+    <bean id="accountService3" factory-bean="instanceFactory" factory-method="getAccountService"/>
+    -->
+    <!-- 3 使用普通工厂中的方法创建
+    <bean id="accountService3" class="hhz.demo3.factory.StaticFactory" factory-method="getAccountService"/>
+    -->
+
+    <!-- bean 的作用范围
+        scope
+            singleton 单列
+            prototype 多列
+            request 作用web的请求范围
+            session 作用web的会话范围
+            global-session 作用全局的会话范围
+
+    <bean id="accountService3" class="hhz.demo3.service.impl.AccountServiceImpl" scope="prototype"/>
+    -->
+
+    <!--
+        bean 对象生命周期
+            单列对象
+                出生 容器创建
+                活着 容器在  一直活着
+                死亡 容器销毁
+                总结 与容器一样
+            多列对象
+                出生 当使用的时候
+                活着
+                死亡
+     -->
+    <bean id="accountService3" class="hhz.demo3.service.impl.AccountServiceImpl" scope="prototype"
+        init-method="init" destroy-method="destroy" />
+
+
+</beans>

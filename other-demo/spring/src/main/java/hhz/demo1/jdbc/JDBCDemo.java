@@ -1,4 +1,4 @@
-package hhz.jdbc;
+package hhz.demo1.jdbc;
 
 import com.mysql.jdbc.Driver;
 

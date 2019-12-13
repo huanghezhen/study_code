@@ -1,4 +1,4 @@
-package hhz.mapper;
+package hhz.demo2.mapper;
 
 /**
  * @ClassName: AccountMapper
