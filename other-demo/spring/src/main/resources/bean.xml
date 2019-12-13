@@ -41,11 +41,47 @@
                 总结 与容器一样
             多列对象
                 出生 当使用的时候
-                活着
-                死亡
-     -->
+                活着 对象只要在使用中一直活着
+                死亡 垃圾回收 gc
+
     <bean id="accountService3" class="hhz.demo3.service.impl.AccountServiceImpl" scope="prototype"
         init-method="init" destroy-method="destroy" />
+    -->
 
+    <!-- spring中的依赖注入
+            依赖注入
+            IOC的作用
+            依赖关系
+                能注入的数据 三类
+                    基本的数据类型和string
+                    其他bean类型(在配置文件中或者注解配置过 bean)
+                    复杂类型/集合类型
+                  注入的方式 三种
+                    使用构造函数
+                    使用set方法
+                    使用注解提供
+    -->
+
+    <!-- 构造函数注入
+            name
+            index
+            type
+            ref 引用
+            value
+    -->
+    <bean id="accountService4" class="hhz.demo4.service.impl.AccountServiceImpl">
+        <constructor-arg name="name" value="hhh"/>
+        <constructor-arg name="age" value="3"/>
+        <constructor-arg name="birthday" ref="now"/>
+    </bean>
+
+    <bean id="now" class="java.util.Date"/>
+
+
+    <bean id="accountService42" class="hhz.demo4.service.impl.AccountServiceImpl2">
+        <property name="age" value="12"/>
+        <property name="birthday" ref="now"/>
+        <property name="name" value="qqq"/>
+    </bean>
 
 </beans>
