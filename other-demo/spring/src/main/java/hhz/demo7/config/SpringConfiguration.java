@@ -2,9 +2,8 @@ package hhz.demo7.config;
 
 import com.mchange.v2.c3p0.ComboPooledDataSource;
 import org.apache.commons.dbutils.QueryRunner;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.*;
 
 import javax.sql.DataSource;
 import java.beans.PropertyVetoException;
@@ -17,9 +16,21 @@ import java.beans.PropertyVetoException;
  */
 @Configuration
 @ComponentScan("hhz.demo7")
+@PropertySource("classpath:jdbc.properties")
 public class SpringConfiguration {
 
+
+    @Value("${jdbc.driver}")
+    private String driver;
+    @Value("${jdbc.url}")
+    private String url;
+    @Value("${jdbc.user}")
+    private String name;
+    @Value("${jdbc.password}")
+    private String password;
+
     @Bean("runner")
+    @Scope("prototype")
     public QueryRunner createQueryRunner(DataSource dataSource) {
         return new QueryRunner(dataSource);
     }
@@ -29,10 +40,10 @@ public class SpringConfiguration {
         ComboPooledDataSource comboPooledDataSource = null;
         try {
             comboPooledDataSource = new ComboPooledDataSource();
-            comboPooledDataSource.setDriverClass("com.mysql.jdbc.Driver");
-            comboPooledDataSource.setJdbcUrl("jdbc:mysql://localhost:3306/demo?useUnicode=true&characterEncoding=utf-8&useSSL=false");
-            comboPooledDataSource.setUser("root");
-            comboPooledDataSource.setPassword("123456");
+            comboPooledDataSource.setDriverClass(driver);
+            comboPooledDataSource.setJdbcUrl(url);
+            comboPooledDataSource.setUser(name);
+            comboPooledDataSource.setPassword(password);
         } catch (PropertyVetoException e) {
             e.printStackTrace();
         }
