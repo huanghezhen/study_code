@@ -1,6 +1,7 @@
 package hhz.demo1.service;
 
 import hhz.demo1.domain.Account;
+import hhz.demo1.factory.BeanFactory;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,6 +23,9 @@ public class AccountServiceTest {
     @Autowired
     private AccountService accountService;
 
+    @Autowired
+    private BeanFactory beanFactory;
+
 
     @Test
     public void testFindAll() {
@@ -31,6 +35,6 @@ public class AccountServiceTest {
 
     @Test
     public void transfer() {
-        accountService.transfer("张三","李四",100f);
+        beanFactory.getAccountServiceProxy().transfer("张三","李四",100f);
     }
 }
