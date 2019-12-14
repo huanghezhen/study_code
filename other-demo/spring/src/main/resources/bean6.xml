@@ -19,7 +19,7 @@
         <constructor-arg name="ds" ref="dataSource"/>
     </bean>
 
-    <context:component-scan base-package="hhz"/>
+    <context:component-scan base-package="hhz.demo6"/>
 
 
 
