@@ -3,7 +3,6 @@ package hhz.demo1.factory;
 import hhz.demo1.service.AccountService;
 import hhz.demo1.utils.TransactionManager;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
@@ -15,14 +14,16 @@ import java.lang.reflect.Proxy;
  * @Author: huanghz
  * @Date: 2019/12/14 22:56
  */
-@Component
 public class BeanFactory {
 
     @Autowired
     private TransactionManager transactionManager;
 
-    @Autowired
     private AccountService accountService;
+
+    public void setAccountService(AccountService accountService) {
+        this.accountService = accountService;
+    }
 
     public AccountService getAccountServiceProxy() {
         return (AccountService) Proxy.newProxyInstance(accountService.getClass().getClassLoader(),

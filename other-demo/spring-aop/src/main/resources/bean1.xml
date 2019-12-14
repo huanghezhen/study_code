@@ -16,5 +16,13 @@
 
     <bean id="runner" class="org.apache.commons.dbutils.QueryRunner" scope="prototype"/>
 
+    <bean id="accountService" factory-bean="beanFactory" factory-method="getAccountServiceProxy"/>
+
+    <bean id="beanFactory" class="hhz.demo1.factory.BeanFactory">
+        <property name="accountService" ref="accountServiceProxy"/>
+    </bean>
+
+    <bean id="accountServiceProxy" class="hhz.demo1.service.impl.AccountServiceImpl"/>
+
     <context:component-scan base-package="hhz.demo1"/>
 </beans>

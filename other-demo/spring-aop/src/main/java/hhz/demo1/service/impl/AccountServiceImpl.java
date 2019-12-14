@@ -4,7 +4,6 @@ import hhz.demo1.domain.Account;
 import hhz.demo1.mapper.AccountMapper;
 import hhz.demo1.service.AccountService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 
 import java.util.List;
 
@@ -14,7 +13,6 @@ import java.util.List;
  * @Author: huanghz
  * @Date: 2019/12/14 11:31
  */
-@Service("accountService")
 public class AccountServiceImpl implements AccountService {
 
     @Autowired
