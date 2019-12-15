@@ -20,6 +20,7 @@ public class Client {
     private AccountService accountService;
     @Test
     public void testAccount() {
-        accountService.saveAccount();
+        int i = accountService.deleteAccount();
+        System.out.println(i);
     }
 }
