@@ -1,0 +1,17 @@
+APPLICATION_ID: hhz
+service_description:
+  name: oauth2-demo
+  version: 0.0.1
+  environment: development
+servicecomb:
+  service:
+    registry:
+      address: http://192.168.21.129:30100
+  rest:
+    address: 0.0.0.0:8083
+  handler:
+    chain:
+      Consumer:
+        default: loadbalance,pack-consumer
+      Provider:
+        default: pack-provider
