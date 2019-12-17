@@ -26,9 +26,15 @@ public class ShiroConfig {
         // 添加内置过滤器
 
         Map<String, String> filterMap = new LinkedHashMap<>();
-        filterMap.put("/add", "authc");
-        filterMap.put("/update", "authc");
+        filterMap.put("/templateTest", "anon");
+        filterMap.put("/login", "anon");
+        filterMap.put("/*", "authc");
+
+        shiroFilter.setLoginUrl("/needLogin");
+
         shiroFilter.setFilterChainDefinitionMap(filterMap);
+
+
 
 
         return shiroFilter;
