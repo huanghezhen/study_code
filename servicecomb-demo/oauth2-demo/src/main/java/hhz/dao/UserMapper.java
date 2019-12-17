@@ -9,6 +9,6 @@ import org.apache.ibatis.annotations.Select;
  * @Date: 2019/12/17 12:56
  */
 public interface UserMapper {
-    @Select("select count(*) from xc_user")
+    @Select("select count(*) from user")
     int getCount();
 }
