@@ -2,7 +2,9 @@
   <div class="dashboard-container">
     <div class="app-container">
       <el-card shadow="never">
-        saas页面
+        <div v-for="(item,index) in dataList" :key="index">
+          {{item.id}} + {{item.name}}
+        </div>
       </el-card>
      </div>
   </div>
@@ -13,12 +15,14 @@ import {list} from '@/api/base/saasClients'
 export default {
   name: 'saas-clients-table-index',
   data() {
-
+    return {
+      dataList:[]
+    }
   },
   methods: {
     getList() {
       list().then(result => {
-        console.log(result)
+        this.dataList = result.data.data
       })
     }
   },
