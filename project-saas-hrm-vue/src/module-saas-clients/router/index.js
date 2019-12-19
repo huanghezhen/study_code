@@ -1,7 +1,7 @@
 /*
- * @Author: itcast 
- * @Description: xxx业务模块 
- * @Date: 2018-04-13 16:13:27 
+ * @Author: itcast
+ * @Description: xxx业务模块
+ * @Date: 2018-04-13 16:13:27
  * @Last Modified by: hans.taozhiwei
  * @Last Modified time: 2018-09-03 11:12:47
  */
@@ -26,6 +26,12 @@ export default [
         component: _import('saas-clients/pages/index'),
         name: 'saas-clients-index',
         meta: {title: 'saas企业', icon: 'component', noCache: true}
+      },
+      {
+        path: 'detail/:id',
+        component: _import('saas-clients/pages/detail'),
+        name: 'saas-clients-detail',
+        meta: {title: 'saas企业详情', icon: 'component', noCache: true}
       }
     ]
   }
