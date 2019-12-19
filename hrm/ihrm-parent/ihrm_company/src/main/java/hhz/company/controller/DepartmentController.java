@@ -15,7 +15,7 @@ import java.util.List;
 
 //1.解决跨域
 @CrossOrigin
-//2.声明restContoller
+//2.声明restController
 @RestController
 //3.设置父路径
 @RequestMapping(value="/company")   //  company/deparment

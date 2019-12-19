@@ -1,5 +1,6 @@
 package hhz.company.service;
 
+
 import hhz.common.model.domain.company.Department;
 import hhz.common.service.BaseService;
 import hhz.common.utils.IdWorker;
