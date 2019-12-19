@@ -1,5 +1,6 @@
 package hhz.company;
 
+import hhz.common.model.domain.company.Company;
 import hhz.company.dao.CompanyDao;
 import org.junit.Test;
 import org.junit.runner.RunWith;
