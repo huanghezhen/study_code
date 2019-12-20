@@ -13,7 +13,7 @@ import org.springframework.context.annotation.ComponentScan;
  */
 @SpringBootApplication
 @EntityScan("hhz.common.model.domain")
-@ComponentScan({"hhz.common.config", "hhz.system"})
+@ComponentScan("hhz")
 public class SystemApplication {
     public static void main(String[] args) {
         SpringApplication.run(SystemApplication.class, args);

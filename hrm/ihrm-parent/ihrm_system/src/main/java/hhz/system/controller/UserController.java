@@ -4,7 +4,6 @@ import hhz.common.controller.BaseController;
 import hhz.common.entity.PageResult;
 import hhz.common.entity.Result;
 import hhz.common.entity.ResultCode;
-import hhz.common.exception.CommonException;
 import hhz.common.model.domain.system.Permission;
 import hhz.common.model.domain.system.User;
 import hhz.common.model.domain.system.response.ProfileResult;
@@ -12,10 +11,8 @@ import hhz.common.model.domain.system.response.UserResult;
 import hhz.common.utils.JwtUtils;
 import hhz.system.service.PermissionService;
 import hhz.system.service.UserService;
-import io.jsonwebtoken.Claims;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
-import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
@@ -160,14 +157,6 @@ public class UserController extends BaseController {
          *   4.获取clamis
          */
         //1.获取请求头信息：名称=Authorization
-        String authorization = request.getHeader("Authorization");
-        if(StringUtils.isEmpty(authorization)) {
-            throw new CommonException(ResultCode.UNAUTHENTICATED);
-        }
-        //2.替换Bearer+空格
-        String token = authorization.replace("Bearer ","");
-        //3.解析token
-        Claims claims = jwtUtils.parseJwt(token);
         String userid = claims.getId();
         User user = userService.findById(userid);
 
