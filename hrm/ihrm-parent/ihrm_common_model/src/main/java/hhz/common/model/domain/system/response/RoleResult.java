@@ -13,6 +13,7 @@ import java.util.List;
 @Getter
 @Setter
 public class RoleResult implements Serializable {
+    private static final long serialVersionUID = 2061314652215916046L;
     private String id;
     /**
      * 角色名

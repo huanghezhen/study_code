@@ -1,8 +1,10 @@
 package hhz.system.service;
 
 
+import hhz.common.model.domain.system.Role;
 import hhz.common.model.domain.system.User;
 import hhz.common.utils.IdWorker;
+import hhz.system.dao.RoleDao;
 import hhz.system.dao.UserDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -15,9 +17,7 @@ import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Predicate;
 import javax.persistence.criteria.Root;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 @Service
 public class UserService {
@@ -26,9 +26,15 @@ public class UserService {
     private UserDao userDao;
 
     @Autowired
+    private RoleDao roleDao;
+
+    @Autowired
     private IdWorker idWorker;
 
 
+    /**
+     * 根据mobile查询用户
+     */
     public User findByMobile(String mobile) {
         return userDao.findByMobile(mobile);
     }
@@ -76,10 +82,10 @@ public class UserService {
      *          companyId
      *
      */
-    public Page findAll(Map<String,Object> map, int page, int size) {
+    public Page findAll(Map<String,Object> map,int page, int size) {
         //1.需要查询条件
         Specification<User> spec = new Specification<User>() {
-            private static final long serialVersionUID = 4027290552613543478L;
+            private static final long serialVersionUID = 5273229819797337584L;
 
             /**
              * 动态拼接查询条件
@@ -117,5 +123,23 @@ public class UserService {
      */
     public void deleteById(String id) {
         userDao.deleteById(id);
+    }
+
+    /**
+     * 分配角色
+     */
+    public void assignRoles(String userId,List<String> roleIds) {
+        //1.根据id查询用户
+        User user = userDao.findById(userId).get();
+        //2.设置用户的角色集合
+        Set<Role> roles = new HashSet<>();
+        for (String roleId : roleIds) {
+            Role role = roleDao.findById(roleId).get();
+            roles.add(role);
+        }
+        //设置用户和角色集合的关系
+        user.setRoles(roles);
+        //3.更新用户
+        userDao.save(user);
     }
 }
