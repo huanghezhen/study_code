@@ -1,4 +1,4 @@
-package hhz.company;
+package hhz.system;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -14,8 +14,8 @@ import org.springframework.context.annotation.ComponentScan;
 @SpringBootApplication
 @EntityScan("hhz.common.model.domain")
 @ComponentScan("hhz.common.config")
-public class CompanyApplication {
+public class SystemApplication {
     public static void main(String[] args) {
-        SpringApplication.run(CompanyApplication.class, args);
+        SpringApplication.run(SystemApplication.class, args);
     }
 }

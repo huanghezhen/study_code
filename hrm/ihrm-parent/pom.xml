@@ -17,6 +17,7 @@
         <module>ihrm_common</module>
         <module>ihrm_common_model</module>
         <module>ihrm_company</module>
+        <module>ihrm_system</module>
     </modules>
 
     <properties>
@@ -53,6 +54,11 @@
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <version>${lombok.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>${mysql.version}</version>
         </dependency>
     </dependencies>
 

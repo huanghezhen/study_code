@@ -1,4 +1,4 @@
-package hhz.company.config;
+package hhz.common.config;
 
 import hhz.common.utils.IdWorker;
 import org.springframework.context.annotation.Bean;
