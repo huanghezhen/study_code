@@ -2,7 +2,7 @@ server:
   port: 9002
 spring:
   application:
-    name: ihrm_company
+    name: ihrm_system
   datasource:
     type: com.zaxxer.hikari.HikariDataSource
     driver-class-name: com.mysql.jdbc.Driver
@@ -22,3 +22,7 @@ spring:
     database: mysql
     show-sql: true
     open-in-view: true
+jwt:
+  config:
+    key: saas-ihrm
+    ttl: 3600000
