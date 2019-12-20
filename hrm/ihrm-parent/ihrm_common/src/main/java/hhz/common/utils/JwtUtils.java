@@ -7,18 +7,19 @@ import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import lombok.Getter;
 import lombok.Setter;
-import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.beans.factory.annotation.Value;
 
 import java.util.Date;
 import java.util.Map;
 
 @Getter
 @Setter
-@ConfigurationProperties("jwt.config")
 public class JwtUtils {
     //签名私钥
+    @Value("${jwt.config.key}")
     private String key;
     //签名的失效时间
+    @Value("${jwt.config.ttl}")
     private Long ttl;
 
     /**

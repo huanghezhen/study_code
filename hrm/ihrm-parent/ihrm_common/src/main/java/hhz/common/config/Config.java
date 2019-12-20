@@ -1,6 +1,7 @@
 package hhz.common.config;
 
 import hhz.common.utils.IdWorker;
+import hhz.common.utils.JwtUtils;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -15,5 +16,9 @@ public class Config {
     @Bean
     public IdWorker idWorker() {
         return new IdWorker();
+    }
+    @Bean
+    public JwtUtils jwtUtils() {
+        return new JwtUtils();
     }
 }

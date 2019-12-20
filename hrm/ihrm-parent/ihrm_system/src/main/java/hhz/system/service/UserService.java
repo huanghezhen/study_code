@@ -28,6 +28,11 @@ public class UserService {
     @Autowired
     private IdWorker idWorker;
 
+
+    public User findByMobile(String mobile) {
+        return userDao.findByMobile(mobile);
+    }
+
     /**
      * 1.保存用户
      */
