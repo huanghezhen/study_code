@@ -5,10 +5,12 @@ import hhz.common.entity.PageResult;
 import hhz.common.entity.Result;
 import hhz.common.entity.ResultCode;
 import hhz.common.exception.CommonException;
+import hhz.common.model.domain.system.Permission;
 import hhz.common.model.domain.system.User;
 import hhz.common.model.domain.system.response.ProfileResult;
 import hhz.common.model.domain.system.response.UserResult;
 import hhz.common.utils.JwtUtils;
+import hhz.system.service.PermissionService;
 import hhz.system.service.UserService;
 import io.jsonwebtoken.Claims;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,6 +36,9 @@ public class UserController extends BaseController {
 
     @Autowired
     private JwtUtils jwtUtils;
+
+    @Autowired
+    private PermissionService permissionService;
 
     /**
      * 分配角色
@@ -165,7 +170,20 @@ public class UserController extends BaseController {
         Claims claims = jwtUtils.parseJwt(token);
         String userid = claims.getId();
         User user = userService.findById(userid);
-        ProfileResult result = new ProfileResult(user);
+
+
+        ProfileResult result = null;
+
+        if ("user".equals(user.getLevel())) {
+            result = new ProfileResult(user);
+        }else{
+            Map map = new HashMap();
+            if ("coAdmin".equals(user.getLevel())) {
+                map.put("enVisible", "1");
+            }
+            List<Permission> all = permissionService.findAll(map);
+            result = new ProfileResult(user,all);
+        }
         return new Result(ResultCode.SUCCESS,result);
     }
 }

@@ -160,6 +160,8 @@ public class PermissionService {
     public List<Permission> findAll(Map<String, Object> map) {
         //1.需要查询条件
         Specification<Permission> spec = new Specification<Permission>() {
+            private static final long serialVersionUID = 9174019938819570641L;
+
             /**
              * 动态拼接查询条件
              * @return

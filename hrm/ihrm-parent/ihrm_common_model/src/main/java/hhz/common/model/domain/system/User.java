@@ -91,7 +91,7 @@ public class User implements Serializable {
     private Integer inServiceStatus;
 
     private String departmentName;
-
+    private String level;
     /**
      *  JsonIgnore
      *     : 忽略json转化
