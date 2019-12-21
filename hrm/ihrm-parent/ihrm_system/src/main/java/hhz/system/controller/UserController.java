@@ -5,10 +5,12 @@ import hhz.common.entity.PageResult;
 import hhz.common.entity.Result;
 import hhz.common.entity.ResultCode;
 import hhz.common.model.domain.system.Permission;
+import hhz.common.model.domain.system.Role;
 import hhz.common.model.domain.system.User;
 import hhz.common.model.domain.system.response.ProfileResult;
 import hhz.common.model.domain.system.response.UserResult;
 import hhz.common.utils.JwtUtils;
+import hhz.common.utils.PermissionConstants;
 import hhz.system.service.PermissionService;
 import hhz.system.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -106,7 +108,7 @@ public class UserController extends BaseController {
     /**
      * 根据id删除
      */
-    @RequestMapping(value = "/user/{id}", method = RequestMethod.DELETE)
+    @RequestMapping(value = "/user/{id}", method = RequestMethod.DELETE,name = "API-USER-DELETE")
     public Result delete(@PathVariable(value = "id") String id) {
         userService.deleteById(id);
         return new Result(ResultCode.SUCCESS);
@@ -130,9 +132,22 @@ public class UserController extends BaseController {
             return new Result(ResultCode.MOBILEORPASSWORDERROR);
         }else {
             //登录成功
+
+            StringBuilder sb = new StringBuilder();
+
+            for (Role role : user.getRoles()) {
+                for (Permission permission : role.getPermissions()) {
+                    if (permission.getType() == PermissionConstants.PERMISSION_API) {
+                        sb.append(permission.getCode())
+                                .append(",");
+                    }
+                }
+            }
+
             Map<String,Object> map = new HashMap<>();
             map.put("companyId",user.getCompanyId());
             map.put("companyName",user.getCompanyName());
+            map.put("apis",sb.toString());
             String token = jwtUtils.createJwt(user.getId(), user.getUsername(), map);
             return new Result(ResultCode.SUCCESS,token);
         }

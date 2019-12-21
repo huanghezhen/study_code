@@ -7,6 +7,8 @@ import io.jsonwebtoken.Claims;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.util.StringUtils;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.method.HandlerMethod;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
 import javax.servlet.http.HttpServletRequest;
@@ -31,8 +33,17 @@ public class JwtInterceptor extends HandlerInterceptorAdapter {
             //3.解析token
             Claims claims = jwtUtils.parseJwt(token);
             if (claims != null) {
-                request.setAttribute("user_claims",claims);
-                return true;
+
+                String apis = (String) claims.get("apis");
+                HandlerMethod h = (HandlerMethod) handler;
+                RequestMapping methodAnnotation = h.getMethodAnnotation(RequestMapping.class);
+                String name = methodAnnotation.name();
+                if (apis.contains(name)) {
+                    request.setAttribute("user_claims",claims);
+                    return true;
+                }else{
+                    throw new CommonException(ResultCode.UNAUTHORISE);
+                }
             }
         }
         throw new CommonException(ResultCode.UNAUTHENTICATED);
