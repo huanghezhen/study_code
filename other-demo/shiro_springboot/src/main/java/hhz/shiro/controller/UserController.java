@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpSession;
+import java.io.Serializable;
 import java.util.Enumeration;
 
 @RestController
@@ -61,11 +62,14 @@ public class UserController {
         UsernamePasswordToken usernamePasswordToken = new UsernamePasswordToken(username, password);
         Subject subject = SecurityUtils.getSubject();
         try {
+
             subject.login(usernamePasswordToken);
+            Serializable id = subject.getSession().getId();
+            System.out.println(id);
+            return "登录成功 essionId : "+ id;
         } catch (AuthenticationException e) {
             return "用户名或者密码错误";
         }
-        return "登录成功";
     }
 
 
