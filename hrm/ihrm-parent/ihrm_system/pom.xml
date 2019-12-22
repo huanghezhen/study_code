@@ -13,11 +13,6 @@
 
     <dependencies>
         <dependency>
-            <artifactId>ihrm_common_model</artifactId>
-            <groupId>hhz</groupId>
-            <version>${project.version}</version>
-        </dependency>
-        <dependency>
             <artifactId>ihrm_common</artifactId>
             <groupId>hhz</groupId>
             <version>${project.version}</version>

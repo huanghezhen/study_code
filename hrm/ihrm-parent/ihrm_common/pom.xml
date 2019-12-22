@@ -11,5 +11,12 @@
 
     <artifactId>ihrm_common</artifactId>
 
+    <dependencies>
+        <dependency>
+            <artifactId>ihrm_common_model</artifactId>
+            <groupId>hhz</groupId>
+            <version>${project.version}</version>
+        </dependency>
+    </dependencies>
 
 </project>

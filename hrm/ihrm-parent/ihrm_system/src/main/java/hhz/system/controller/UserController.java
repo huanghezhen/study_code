@@ -4,21 +4,21 @@ import hhz.common.controller.BaseController;
 import hhz.common.entity.PageResult;
 import hhz.common.entity.Result;
 import hhz.common.entity.ResultCode;
-import hhz.common.model.domain.system.Permission;
-import hhz.common.model.domain.system.Role;
 import hhz.common.model.domain.system.User;
-import hhz.common.model.domain.system.response.ProfileResult;
 import hhz.common.model.domain.system.response.UserResult;
-import hhz.common.utils.JwtUtils;
-import hhz.common.utils.PermissionConstants;
 import hhz.system.service.PermissionService;
 import hhz.system.service.UserService;
+import org.apache.shiro.SecurityUtils;
+import org.apache.shiro.authc.AuthenticationException;
+import org.apache.shiro.authc.UsernamePasswordToken;
+import org.apache.shiro.crypto.hash.Md5Hash;
+import org.apache.shiro.subject.PrincipalCollection;
+import org.apache.shiro.subject.Subject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -33,8 +33,6 @@ public class UserController extends BaseController {
     @Autowired
     private UserService userService;
 
-    @Autowired
-    private JwtUtils jwtUtils;
 
     @Autowired
     private PermissionService permissionService;
@@ -126,7 +124,20 @@ public class UserController extends BaseController {
     public Result login(@RequestBody Map<String,String> loginMap) {
         String mobile = loginMap.get("mobile");
         String password = loginMap.get("password");
-        User user = userService.findByMobile(mobile);
+
+        password = new Md5Hash(password, mobile, 3).toString();
+        UsernamePasswordToken usernamePasswordToken = new UsernamePasswordToken(mobile, password);
+        Subject subject = SecurityUtils.getSubject();
+        try {
+            subject.login(usernamePasswordToken);
+            String id = (String) subject.getSession().getId();
+            return new Result(ResultCode.SUCCESS,id);
+        } catch (AuthenticationException e) {
+            e.printStackTrace();
+            return new Result(ResultCode.MOBILEORPASSWORDERROR);
+        }
+
+        /*User user = userService.findByMobile(mobile);
         //登录失败
         if(user == null || !user.getPassword().equals(password)) {
             return new Result(ResultCode.MOBILEORPASSWORDERROR);
@@ -149,8 +160,7 @@ public class UserController extends BaseController {
             map.put("companyName",user.getCompanyName());
             map.put("apis",sb.toString());
             String token = jwtUtils.createJwt(user.getId(), user.getUsername(), map);
-            return new Result(ResultCode.SUCCESS,token);
-        }
+        }*/
     }
 
 
@@ -163,14 +173,14 @@ public class UserController extends BaseController {
      */
     @RequestMapping(value="/profile",method = RequestMethod.POST)
     public Result profile(HttpServletRequest request) throws Exception {
-
-        /**
+/*
+        *//**
          * 从请求头信息中获取token数据
          *   1.获取请求头信息：名称=Authorization
          *   2.替换Bearer+空格
          *   3.解析token
          *   4.获取clamis
-         */
+         *//*
         //1.获取请求头信息：名称=Authorization
         String userid = claims.getId();
         User user = userService.findById(userid);
@@ -187,7 +197,10 @@ public class UserController extends BaseController {
             }
             List<Permission> all = permissionService.findAll(map);
             result = new ProfileResult(user,all);
-        }
-        return new Result(ResultCode.SUCCESS,result);
+        }*/
+
+        Subject subject = SecurityUtils.getSubject();
+        PrincipalCollection previousPrincipals = subject.getPreviousPrincipals();
+        return new Result(ResultCode.SUCCESS,previousPrincipals.getPrimaryPrincipal());
     }
 }

@@ -1,14 +1,8 @@
 package hhz.common.config;
 
-import hhz.common.interceptor.JwtInterceptor;
 import hhz.common.utils.IdWorker;
-import hhz.common.utils.JwtUtils;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.orm.jpa.support.OpenEntityManagerInViewFilter;
-import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
-import org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport;
 
 /**
  * @ClassName: Config
@@ -16,7 +10,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupp
  * @Author: huanghz
  * @Date: 2019/12/18 14:44
  */
-@Configuration
+/*@Configuration
 public class Config extends WebMvcConfigurationSupport {
     @Bean
     public IdWorker idWorker() {
@@ -40,4 +34,13 @@ public class Config extends WebMvcConfigurationSupport {
                 .addPathPatterns("/**")
                 .excludePathPatterns("/sys/login", "/frame/register/**");
     }
+}*/
+
+@Configuration
+public class Config {
+    @Bean
+    public IdWorker idWorker() {
+        return new IdWorker();
+    }
+
 }

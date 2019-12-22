@@ -5,7 +5,6 @@ import hhz.common.exception.CommonException;
 import hhz.common.utils.JwtUtils;
 import io.jsonwebtoken.Claims;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.method.HandlerMethod;
@@ -20,7 +19,7 @@ import javax.servlet.http.HttpServletResponse;
  * @Author: huanghz
  * @Date: 2019/12/20 15:07
  */
-@Component
+
 public class JwtInterceptor extends HandlerInterceptorAdapter {
     @Autowired
     private JwtUtils jwtUtils;

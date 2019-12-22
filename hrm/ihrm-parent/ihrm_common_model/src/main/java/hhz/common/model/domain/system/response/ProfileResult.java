@@ -7,19 +7,23 @@ import hhz.common.model.domain.system.User;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.io.Serializable;
 import java.util.*;
 
 @Setter
 @Getter
-public class ProfileResult {
+public class ProfileResult implements Serializable {
+
+    private static final long serialVersionUID = -7130312081850155744L;
+
     private String mobile;
     private String username;
     private String company;
-    private Map<String,Object> roles = new HashMap<>();
+    private String companyId;
+    private Map<String, Object> roles = new HashMap<>();
 
 
     /**
-     *
      * @param user
      */
     public ProfileResult(User user, List<Permission> list) {
@@ -33,17 +37,17 @@ public class ProfileResult {
 
         for (Permission perm : list) {
             String code = perm.getCode();
-            if(perm.getType() == 1) {
+            if (perm.getType() == 1) {
                 menus.add(code);
-            }else if(perm.getType() == 2) {
+            } else if (perm.getType() == 2) {
                 points.add(code);
-            }else {
+            } else {
                 apis.add(code);
             }
         }
-        this.roles.put("menus",menus);
-        this.roles.put("points",points);
-        this.roles.put("apis",apis);
+        this.roles.put("menus", menus);
+        this.roles.put("points", points);
+        this.roles.put("apis", apis);
     }
 
     public ProfileResult(User user) {
@@ -59,18 +63,18 @@ public class ProfileResult {
             Set<Permission> perms = role.getPermissions();
             for (Permission perm : perms) {
                 String code = perm.getCode();
-                if(perm.getType() == 1) {
+                if (perm.getType() == 1) {
                     menus.add(code);
-                }else if(perm.getType() == 2) {
+                } else if (perm.getType() == 2) {
                     points.add(code);
-                }else {
+                } else {
                     apis.add(code);
                 }
             }
         }
 
-        this.roles.put("menus",menus);
-        this.roles.put("points",points);
-        this.roles.put("apis",apis);
+        this.roles.put("menus", menus);
+        this.roles.put("points", points);
+        this.roles.put("apis", apis);
     }
 }
