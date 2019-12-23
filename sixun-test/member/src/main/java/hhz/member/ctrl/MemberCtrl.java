@@ -1,8 +1,11 @@
 package hhz.member.ctrl;
 
+import hhz.common.entity.Result;
+import hhz.member.entity.LoginQuery;
+import hhz.member.service.iface.MemberService;
 import org.apache.servicecomb.provider.rest.common.RestSchema;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * @ClassName: MemberCtrl
@@ -14,8 +17,17 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping(path = "/member")
 public class MemberCtrl {
 
+    @Autowired
+    private MemberService memberService;
+
     @GetMapping("/echo")
     public String echo() {
         return "member";
+    }
+
+
+    @PostMapping("/login")
+    public Result login(@RequestBody LoginQuery loginQuery) {
+        return memberService.login(loginQuery);
     }
 }

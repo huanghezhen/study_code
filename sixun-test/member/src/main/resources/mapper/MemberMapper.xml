@@ -2,9 +2,18 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-
-
 <mapper namespace="hhz.member.dao.MemberMapper">
 
 
+    <select id="getUserByUsername" resultType="hhz.common.entity.member.User">
+        select
+        f_id,
+        f_username,
+        f_password,
+        f_type,
+        f_mer
+        from t_user
+        where
+        f_username = #{fUsername}
+    </select>
 </mapper>

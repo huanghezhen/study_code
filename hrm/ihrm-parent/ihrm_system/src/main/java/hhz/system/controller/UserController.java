@@ -130,6 +130,7 @@ public class UserController extends BaseController {
         Subject subject = SecurityUtils.getSubject();
         try {
             subject.login(usernamePasswordToken);
+
             String id = (String) subject.getSession().getId();
             return new Result(ResultCode.SUCCESS,id);
         } catch (AuthenticationException e) {
