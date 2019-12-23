@@ -8,7 +8,7 @@ servicecomb:
     registry:
       address: http://servicecomb-server:30100
   rest:
-    address: 0.0.0.0:8081
+    address: 0.0.0.0:8091
   handler:
     chain:
       Consumer:
