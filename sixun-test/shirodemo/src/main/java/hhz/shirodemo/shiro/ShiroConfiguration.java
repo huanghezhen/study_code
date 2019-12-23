@@ -1,4 +1,4 @@
-package hhz.member.shiro;
+package hhz.shirodemo.shiro;
 
 import org.apache.shiro.spring.web.ShiroFilterFactoryBean;
 import org.apache.shiro.web.mgt.DefaultWebSecurityManager;
@@ -16,13 +16,9 @@ public class ShiroConfiguration {
         shiroFilter.setSecurityManager(defaultWebSecurityManager);
 
         // 添加内置过滤器
-
         Map<String, String> filterMap = new LinkedHashMap<>();
-
-        filterMap.put("/*", "authc");
-
+        filterMap.put("/**", "authc");
         shiroFilter.setFilterChainDefinitionMap(filterMap);
-
         return shiroFilter;
     }
 
