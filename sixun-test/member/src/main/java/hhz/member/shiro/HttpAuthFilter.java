@@ -30,7 +30,7 @@ public class HttpAuthFilter implements HttpServerFilter {
     sm.setSessionValidationSchedulerEnabled(false);
     // 关闭会话存储，否则会报异常
     ((DefaultSessionStorageEvaluator) ((DefaultSubjectDAO) this.securityManager.getSubjectDAO())
-        .getSessionStorageEvaluator()).setSessionStorageEnabled(false);
+            .getSessionStorageEvaluator()).setSessionStorageEnabled(false);
     this.securityManager.setSessionManager(sm);
   }
 
@@ -58,6 +58,8 @@ public class HttpAuthFilter implements HttpServerFilter {
         System.out.println("Has no right!");  // 异常表示身份认证失败
         return Response.create(401, "Unauthorized", e.getMessage());
       }
+
+
       SwaggerProducerOperation swaggerProducerOperation = invocation.getOperationMeta().getExtData(Const.PRODUCER_OPERATION);
       RequiresRoles requiresRoles = swaggerProducerOperation.getProducerMethod().getAnnotation(RequiresRoles.class);
       if (requiresRoles != null) {
@@ -81,12 +83,12 @@ public class HttpAuthFilter implements HttpServerFilter {
       boolean login = realm.canLogin(username, secret);
       if (!login) {
         return Response.create(401, "Unauthorized",
-            "User/Password is not right!");
+                "User/Password is not right!");
       }
       String token = JWTUtils.sign(username, secret);
       return Response.createSuccess(token);
     }
     return Response.create(401, "Unauthorized",
-        "JWT Token is missing, please login first!");
+            "JWT Token is missing, please login first!");
   }
 }

@@ -15,14 +15,14 @@ import java.util.Date;
 public class JWTUtils {
   private static final Logger LOGGER = LoggerFactory.getLogger(JWTUtils.class);
 
-  private static final int TOKEN_VALID_TIME = 30 * 60 * 1000;
+  private static final int TOKEN_VALID_TIME = 5 * 60 * 1000;
 
   public static boolean verify(String username, String secret, String token) {
     try {
       Algorithm algorithm = Algorithm.HMAC256(secret);
       JWTVerifier verifier = JWT.require(algorithm)
-          .withClaim("username", username)
-          .build();
+              .withClaim("username", username)
+              .build();
       DecodedJWT decodedJWT = verifier.verify(token);
       System.out.println(decodedJWT.getExpiresAt());
       return true;
@@ -35,8 +35,8 @@ public class JWTUtils {
     try {
       Algorithm algorithm = Algorithm.HMAC256(secret);
       String token = JWT.create().withClaim("username", username)
-          .withExpiresAt(new Date(System.currentTimeMillis() + TOKEN_VALID_TIME))
-          .sign(algorithm);
+              .withExpiresAt(new Date(System.currentTimeMillis() + TOKEN_VALID_TIME))
+              .sign(algorithm);
       return token;
     } catch (JWTCreationException exception) {
       return null;
@@ -49,7 +49,8 @@ public class JWTUtils {
       DecodedJWT jwt = JWT.decode(token);
       return jwt.getClaim("username").asString();
     } catch (JWTDecodeException e) {
-      return token;
+      LOGGER.error("token is error", e);
+      return null;
     }
   }
 }

@@ -3,15 +3,15 @@ package hhz.member.shiro;
 import org.apache.shiro.authc.AuthenticationToken;
 
 public class JWTToken implements AuthenticationToken {
+  private static final long serialVersionUID = -6496128678249182260L;
   private String token;
 
   public JWTToken(String token) {
     this.token = token;
   }
-
   @Override
   public Object getPrincipal() {
-    return JWTUtils.decodeToken(token);
+    return token;
   }
 
   @Override

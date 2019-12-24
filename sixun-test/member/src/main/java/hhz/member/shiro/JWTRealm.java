@@ -47,7 +47,7 @@ public class JWTRealm extends IniRealm {
     }
     // 校验成功，返回认证完的身份信息
     SimpleAuthenticationInfo simpleAuthenticationInfo = new SimpleAuthenticationInfo(username,
-        jwtToken.getCredentials(), getName());
+            jwtToken.getCredentials(), getName());
     return simpleAuthenticationInfo;
   }
 
