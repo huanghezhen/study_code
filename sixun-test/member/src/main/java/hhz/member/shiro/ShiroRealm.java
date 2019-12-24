@@ -23,11 +23,13 @@ public class ShiroRealm extends AuthorizingRealm {
 
     /**
      * 授权
+     *
      * @param principalCollection
      * @return
      */
     @Override
     protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection principalCollection) {
+
         return null;
     }
 
@@ -45,7 +47,7 @@ public class ShiroRealm extends AuthorizingRealm {
         String username = upToken.getUsername();
         String password = new String(upToken.getPassword());
         User user = memberMapper.getUserByUsername(username);
-        if (password.equals(user.getFPassword())) {
+        if (user != null && password.equals(user.getFPassword())) {
             return new SimpleAuthenticationInfo();
         }
         return null;

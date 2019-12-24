@@ -6,7 +6,10 @@ import hhz.member.entity.LoginQuery;
 import hhz.member.service.iface.MemberService;
 import org.apache.servicecomb.provider.rest.common.RestSchema;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 /**
  * @ClassName: MemberCtrl
@@ -15,8 +18,10 @@ import org.springframework.web.bind.annotation.*;
  * @Date: 2019/12/23 10:11
  */
 @RestSchema(schemaId = "member")
-@RequestMapping("/member")
+@RequestMapping("/member/memberCtrl")
 public class MemberCtrl {
+
+
 
     @Autowired
     private MemberService memberService;

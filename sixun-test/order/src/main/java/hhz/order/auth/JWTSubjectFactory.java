@@ -1,4 +1,4 @@
-package hhz.member.shiro;
+package hhz.order.auth;
 
 import org.apache.shiro.mgt.DefaultSubjectFactory;
 import org.apache.shiro.subject.Subject;

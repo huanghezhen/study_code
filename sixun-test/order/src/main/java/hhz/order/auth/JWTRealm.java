@@ -1,4 +1,4 @@
-package hhz.member.shiro;
+package hhz.order.auth;
 
 import org.apache.shiro.authc.*;
 import org.apache.shiro.authz.AuthorizationInfo;

@@ -1,4 +1,4 @@
-package hhz.member.shiro;
+package hhz.order.auth;
 
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.algorithms.Algorithm;

@@ -14,6 +14,7 @@ public enum ResultEnum {
 
     NEED_LOGIN(false,null,"您还未登录"),
     LOGIN_ERROR(false,null,"账户或密码错误"),
+    LOGIN_SUCCESS(true,555,"登录成功"),
     PERMISSION_DENIED(false,null,"权限不足"),
 
     ;
