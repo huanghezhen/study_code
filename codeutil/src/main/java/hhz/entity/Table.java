@@ -54,4 +54,15 @@ public class Table {
 	public void setColumns(List<Column> columns) {
 		this.columns = columns;
 	}
+
+	@Override
+	public String toString() {
+		return "Table{" +
+				"name='" + name + '\'' +
+				", name2='" + name2 + '\'' +
+				", comment='" + comment + '\'' +
+				", key='" + key + '\'' +
+				", columns=" + columns +
+				'}';
+	}
 }

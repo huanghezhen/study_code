@@ -31,7 +31,7 @@ public class PropertiesUtils {
 
     public static void main(String[] args) {
         PropertiesUtils.customMap.forEach((k, v)->{
-            System.out.println(k+"--"+v);
+            System.out.println(k+"="+v);
         });
     }
 }

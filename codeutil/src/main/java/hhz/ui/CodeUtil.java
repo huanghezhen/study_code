@@ -8,6 +8,7 @@
 package hhz.ui;
 
 
+import hhz.core.GeneratorFacade;
 import hhz.entity.DataBase;
 import hhz.entity.Settings;
 
@@ -542,12 +543,16 @@ public class CodeUtil extends JFrame {
 	 * @param db				数据库信息
 	 */
 	private void generator(String templetPath,String outpath,Settings settings,DataBase db) {
-		System.out.println(templetPath);
+		/*System.out.println(templetPath);
 		System.out.println(outpath);
 		System.out.println(settings);
-		System.out.println(db);
-//		GeneratorFacade gf = new GeneratorFacade(templetPath,outpath,settings);
-//		gf.generatorByTable(db);
+		System.out.println(db);*/
+		GeneratorFacade gf = new GeneratorFacade(templetPath,outpath,settings,db);
+		try {
+			gf.generatorByDataBase();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 
 }
