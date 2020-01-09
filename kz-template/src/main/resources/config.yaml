@@ -11,6 +11,11 @@ ignoreColumn:
 # 生成文件的绝对路径
 generatePath: D:\hhh
 
+# 生成java的包名
+packageName: hhz.system
+
+author: huanghz
+
 # 是否生成ctrl文件
 generateCtrlAble: true
 # 是否生成 dao文件
@@ -40,5 +45,6 @@ replacementRule:
   NVARCHAR2: String
   NUMBER: Long
   CHAR: String
+
 # 表名的前缀
 tableRemovePrefixes: t_

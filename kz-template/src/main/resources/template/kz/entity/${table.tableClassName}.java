@@ -1,6 +1,15 @@
+package ${packageName}.entity;
+
+/**
+ * @ClassName: ${table.tableClassName}
+ * @Description: TODO(该类为自动生成,请及时修改注释)
+ * @Author: ${author}
+ * @Date: ${data}
+ */
 public class ${table.tableClassName}{
 
 <#list table.columns as column>
+    // ${column.columnComment}
     private ${column.columnJavaType} ${column.columnClassName};
 </#list>
 

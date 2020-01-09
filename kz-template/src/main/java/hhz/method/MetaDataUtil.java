@@ -21,7 +21,7 @@ import java.util.Properties;
  */
 public class MetaDataUtil
 {
-    public static Connection getConnection() throws Exception
+    private static Connection getConnection() throws Exception
     {
         Properties props = new Properties();
         Mysql mysql = Config.init.getMysql();
