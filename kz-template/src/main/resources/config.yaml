@@ -1,0 +1,44 @@
+# 需要生成的表名称
+tableNameList:
+  - t_agent_ledger_record
+  - t_fubei_sub_mech_shop_rel
+  - t_mall_order_pay_sub_info
+
+ignoreColumn:
+  - _ddm_lock
+  - _slot
+
+# 生成文件的绝对路径
+generatePath: D:\hhh
+
+# 是否生成ctrl文件
+generateCtrlAble: true
+# 是否生成 dao文件
+generateDaoAble: true
+# 是否生成entity文件
+generateEntityAble: true
+# 是否生成service文件
+generateServiceAble: true
+
+# 数据库配置
+mysql:
+  driver: com.mysql.jdbc.Driver
+  url: jdbc:mysql://114.116.80.254:7002/pay_ls?useUnicode=true&characterEncoding=utf-8&useSSL=false
+  username: kz_admin
+  password: kz_admin123
+
+# sql类型与java类型替换规则
+replacementRule:
+  VARCHAR: String
+  BIGINT: Long
+  INT: Integer
+  DATE: java.util.Date
+  DATETIME: java.util.Date
+  DOUBLE: Double
+  TEXT: String
+  VARCHAR2: String
+  NVARCHAR2: String
+  NUMBER: Long
+  CHAR: String
+# 表名的前缀
+tableRemovePrefixes: t_
