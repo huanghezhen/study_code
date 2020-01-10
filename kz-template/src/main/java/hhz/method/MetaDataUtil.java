@@ -50,33 +50,65 @@ public class MetaDataUtil
                 table.setTableName(tableName);
                 table.setTableClassName(StringUtil.removePrefix(tableName));
                 table.setTableComment(tableRet.getString("REMARKS"));
-                ResultSet columnRet = metaData.getColumns(null, null, tableName, null);
-                List<Column> columnList = new ArrayList<>();
-                Column column;
-                while (columnRet.next())
-                {
-                    String columnName = columnRet.getString("COLUMN_NAME");
-                    // 字段被忽略 直接跳过
-                    if (Config.init.getIgnoreColumn().contains(columnName))
-                    {
-                        continue;
-                    }
-                    column = new Column();
-                    String columnClassName = StringUtil.camelCaseName(columnName);
-                    String columnType = columnRet.getString("TYPE_NAME");
-                    String columnJavaType = Config.init.getReplacementRule().get(columnType);
-                    String columnComment = columnRet.getString("REMARKS");
-                    column.setColumnClassName(columnClassName);
-                    column.setColumnComment(columnComment);
-                    column.setColumnJavaType(columnJavaType);
-                    column.setColumnName(columnName);
-                    column.setColumnType(columnType);
-                    columnList.add(column);
-                }
+                List<String> primaryKeyList = listPrimaryKey(tableName);
+                table.setPrimaryKeyList(primaryKeyList);
+                List<Column> columnList = listColumn(tableName, primaryKeyList);
                 table.setColumns(columnList);
                 tableList.add(table);
             }
         }
         return tableList;
+    }
+
+    private static List<String> listPrimaryKey(String tableName) throws Exception
+    {
+        List<String> primaryKeyList = new ArrayList<>();
+        Connection connection = getConnection();
+        DatabaseMetaData metaData = connection.getMetaData();
+        ResultSet primaryKeys = metaData.getPrimaryKeys(null, null, tableName);
+        while (primaryKeys.next())
+        {
+            String primaryKey = primaryKeys.getString("COLUMN_NAME");
+            primaryKeyList.add(primaryKey);
+        }
+        return primaryKeyList;
+    }
+
+    private static List<Column> listColumn(String tableName, List<String> primaryKeyList) throws Exception
+    {
+        Connection connection = getConnection();
+        DatabaseMetaData metaData = connection.getMetaData();
+        ResultSet columnRet = metaData.getColumns(null, null, tableName, null);
+        List<Column> columnList = new ArrayList<>();
+        Column column;
+        while (columnRet.next())
+        {
+            String columnName = columnRet.getString("COLUMN_NAME");
+            // 字段被忽略 直接跳过
+            if (Config.init.getIgnoreColumn().contains(columnName))
+            {
+                continue;
+            }
+            column = new Column();
+            String columnClassName = StringUtil.camelCaseName(columnName);
+            String columnType = columnRet.getString("TYPE_NAME");
+            String columnJavaType = Config.init.getReplacementRule().get(columnType);
+            String columnComment = columnRet.getString("REMARKS");
+            if (primaryKeyList.contains(columnName))
+            {
+                column.setPrimaryAble(true);
+            }
+            else
+            {
+                column.setPrimaryAble(false);
+            }
+            column.setColumnClassName(columnClassName);
+            column.setColumnComment(columnComment);
+            column.setColumnJavaType(columnJavaType);
+            column.setColumnName(columnName);
+            column.setColumnType(columnType);
+            columnList.add(column);
+        }
+        return columnList;
     }
 }

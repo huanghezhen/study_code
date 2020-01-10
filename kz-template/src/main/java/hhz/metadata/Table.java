@@ -19,16 +19,16 @@ public class Table
     // 列集合
     private List<Column> columns;
     // 主键集合
-    private List<String> primaryList;
+    private List<String> primaryKeyList;
 
-    public List<String> getPrimaryList()
+    public List<String> getPrimaryKeyList()
     {
-        return primaryList;
+        return primaryKeyList;
     }
 
-    public void setPrimaryList(List<String> primaryList)
+    public void setPrimaryKeyList(List<String> primaryKeyList)
     {
-        this.primaryList = primaryList;
+        this.primaryKeyList = primaryKeyList;
     }
 
     public String getTableName()
