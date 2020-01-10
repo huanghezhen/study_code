@@ -3,7 +3,7 @@
 <mapper namespace="${packageName}.dao.${table.tableClassName}Mapper">
 
 
-    <resultMap id="BaseResultMap" type="${packageName}.entity.${column.columnName}" >
+    <resultMap id="BaseResultMap" type="${packageName}.entity.${table.tableClassName}" >
         <#list table.columns as column>
         <result column="${column.columnName}" property="${column.columnClassName}" />
         </#list>
