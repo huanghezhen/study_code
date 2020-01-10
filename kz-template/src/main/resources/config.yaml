@@ -1,34 +1,24 @@
-# 需要生成的表名称
+# 带 * 的是经常被修改的属性
+
+# 需要生成的表名称  *
 tableNameList:
   - t_agent_ledger_record
   - t_fubei_sub_mech_shop_rel
   - t_mall_order_pay_sub_info
 
-ignoreColumn:
-  - _ddm_lock
-  - _slot
-
-# 生成文件的绝对路径
+# 生成文件的绝对路径 *
 generatePath: D:\hhh
 
-# 生成java的包名
+# 生成java的共用包名(列: ctrl包的上一级) *
 packageName: hhz.system
 
+# 项目名称(列: kzPlatformBI) *
 projectName: kzPlatformBI
 
-# 作者
+# 作者 *
 author: huanghz
 
-# 是否生成ctrl文件
-generateCtrlAble: true
-# 是否生成 dao文件
-generateDaoAble: true
-# 是否生成entity文件
-generateEntityAble: true
-# 是否生成service文件
-generateServiceAble: true
-
-# 数据库配置
+# 数据库配置 *
 mysql:
   driver: com.mysql.jdbc.Driver
   url: jdbc:mysql://114.116.80.254:7002/pay_ls?useUnicode=true&characterEncoding=utf-8&useSSL=false
@@ -48,6 +38,18 @@ replacementRule:
   NVARCHAR2: String
   NUMBER: Long
   CHAR: String
+# 需要忽略的字段
+ignoreColumn:
+  - _ddm_lock
+  - _slot
 
 # 表名的前缀
 tableRemovePrefixes: t_
+# 是否生成ctrl文件(暂时无效)
+generateCtrlAble: true
+# 是否生成 dao文件(暂时无效)
+generateDaoAble: true
+# 是否生成entity文件(暂时无效)
+generateEntityAble: true
+# 是否生成service文件(暂时无效)
+generateServiceAble: true
