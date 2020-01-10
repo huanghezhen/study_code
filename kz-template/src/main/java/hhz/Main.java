@@ -28,6 +28,7 @@ public class Main
         model.put("packageName", Config.init.getPackageName());
         model.put("projectName", Config.init.getProjectName());
         model.put("author", Config.init.getAuthor());
+        model.put("numberSign", "#");
         model.put("data", format.format(new Date().getTime()));
         for (Table table : MetaDataUtil.getTable())
         {

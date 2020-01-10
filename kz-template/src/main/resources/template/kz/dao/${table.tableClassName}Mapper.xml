@@ -3,28 +3,83 @@
 <mapper namespace="${packageName}.dao.${table.tableClassName}Mapper">
 
     <select id="get${table.tableClassName}" resultType="${packageName}.entity.${table.tableClassName}">
-
+        select
+        <#list table.columns as column>
+            ${column.columnName} ${column.columnClassName}
+        </#list>
+        from ${table.tableName}
+        where f_mer = ${numberSign}{fMer}
+        <#list table.primaryKeyList as primaryKey>
+            and ${primaryKey.name} = ${numberSign}{${primaryKey.javaName}}
+        </#list>
     </select>
 
     <select id="count${table.tableClassName}" resultType="int">
-
+        select
+            count(*)
+        from ${table.tableName}
+        where f_mer = ${numberSign}{fMer}
     </select>
     <select id="list${table.tableClassName}" resultType="${packageName}.entity.${table.tableClassName}">
+        select
+        <#list table.columns as column>
+            ${column.columnName} ${column.columnClassName}
+        </#list>
+        from ${table.tableName}
+        where f_mer = ${numberSign}{fMer}
 
+        limit ${numberSign}{page},${numberSign}{rows}
     </select>
 
     <insert id="add${table.tableClassName}">
+        insert into ${table.tableName}
+        (
+        <#list table.columns as column>
+            ${column.columnName}<#sep>,
+        </#list>
 
+        )
+        values
+        (
+        <#list table.columns as column>
+            ${numberSign}{${column.columnClassName}}<#sep>,
+        </#list>
+
+        )
     </insert>
 
     <insert id="add${table.tableClassName}Batch">
+        insert into ${table.tableName}
+        (
+        <#list table.columns as column>
+            ${column.columnName}<#sep>,
+        </#list>
 
+        )
+        values
+        <foreach collection="list" item="item" index="index" separator=",">
+        (
+        <#list table.columns as column>
+            ${numberSign}{item.${column.columnClassName}}<#sep>,
+        </#list>
+
+        )
+        </foreach>
     </insert>
     <delete id="delete${table.tableClassName}">
-
+        delete from ${table.tableName}
+        where f_mer = ${numberSign}{fMer}
     </delete>
 
     <update id="update${table.tableClassName}">
-
+        update ${table.tableName}
+        <set>
+        <#list table.columns as column>
+        <if test="${column.columnClassName} != null and ${column.columnClassName} !=''">
+            ${column.columnName} = ${column.columnClassName},
+        </if>
+        </#list>
+        </set>
+        where f_mer = ${numberSign}{fMer}
     </update>
 </mapper>

@@ -3,6 +3,7 @@ package hhz.method;
 import hhz.config.Config;
 import hhz.config.Mysql;
 import hhz.metadata.Column;
+import hhz.metadata.PrimaryKey;
 import hhz.metadata.Table;
 
 import java.sql.Connection;
@@ -50,9 +51,14 @@ public class MetaDataUtil
                 table.setTableName(tableName);
                 table.setTableClassName(StringUtil.removePrefix(tableName));
                 table.setTableComment(tableRet.getString("REMARKS"));
-                List<String> primaryKeyList = listPrimaryKey(tableName);
+                List<PrimaryKey> primaryKeyList = listPrimaryKey(tableName);
                 table.setPrimaryKeyList(primaryKeyList);
-                List<Column> columnList = listColumn(tableName, primaryKeyList);
+                List<String> primaryKeyStringList = new ArrayList<>();
+                for (PrimaryKey primaryKey : primaryKeyList)
+                {
+                    primaryKeyStringList.add(primaryKey.getName());
+                }
+                List<Column> columnList = listColumn(tableName, primaryKeyStringList);
                 table.setColumns(columnList);
                 tableList.add(table);
             }
@@ -60,21 +66,25 @@ public class MetaDataUtil
         return tableList;
     }
 
-    private static List<String> listPrimaryKey(String tableName) throws Exception
+    private static List<PrimaryKey> listPrimaryKey(String tableName) throws Exception
     {
-        List<String> primaryKeyList = new ArrayList<>();
+        List<PrimaryKey> primaryKeyList = new ArrayList<>();
         Connection connection = getConnection();
         DatabaseMetaData metaData = connection.getMetaData();
         ResultSet primaryKeys = metaData.getPrimaryKeys(null, null, tableName);
+        PrimaryKey primaryKey;
         while (primaryKeys.next())
         {
-            String primaryKey = primaryKeys.getString("COLUMN_NAME");
+            primaryKey = new PrimaryKey();
+            String name = primaryKeys.getString("COLUMN_NAME");
+            primaryKey.setName(name);
+            primaryKey.setJavaName(StringUtil.camelCaseName(name));
             primaryKeyList.add(primaryKey);
         }
         return primaryKeyList;
     }
 
-    private static List<Column> listColumn(String tableName, List<String> primaryKeyList) throws Exception
+    private static List<Column> listColumn(String tableName, List<String> primaryKeyStringList) throws Exception
     {
         Connection connection = getConnection();
         DatabaseMetaData metaData = connection.getMetaData();
@@ -94,13 +104,13 @@ public class MetaDataUtil
             String columnType = columnRet.getString("TYPE_NAME");
             String columnJavaType = Config.init.getReplacementRule().get(columnType);
             String columnComment = columnRet.getString("REMARKS");
-            if (primaryKeyList.contains(columnName))
+            if (primaryKeyStringList.contains(columnName))
             {
-                column.setPrimaryAble(true);
+                column.setPrimaryKeyAble(true);
             }
             else
             {
-                column.setPrimaryAble(false);
+                column.setPrimaryKeyAble(false);
             }
             column.setColumnClassName(columnClassName);
             column.setColumnComment(columnComment);

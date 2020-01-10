@@ -19,16 +19,16 @@ public class Column
     // 列备注
     private String  columnComment;
     // 是否是主键
-    private Boolean primaryAble;
+    private Boolean primaryKeyAble;
 
-    public Boolean getPrimaryAble()
+    public Boolean getPrimaryKeyAble()
     {
-        return primaryAble;
+        return primaryKeyAble;
     }
 
-    public void setPrimaryAble(Boolean primaryAble)
+    public void setPrimaryKeyAble(Boolean primaryKeyAble)
     {
-        this.primaryAble = primaryAble;
+        this.primaryKeyAble = primaryKeyAble;
     }
 
     public String getColumnName()
