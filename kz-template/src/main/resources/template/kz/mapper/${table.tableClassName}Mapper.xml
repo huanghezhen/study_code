@@ -2,6 +2,14 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="${packageName}.dao.${table.tableClassName}Mapper">
 
+
+    <resultMap id="BaseResultMap" type="${packageName}.entity.${column.columnName}" >
+        <#list table.columns as column>
+        <result column="${column.columnName}" property="${column.columnClassName}" />
+        </#list>
+    </resultMap>
+
+
     <select id="get${table.tableClassName}" resultType="${packageName}.entity.${table.tableClassName}">
         select
         <#list table.columns as column>
