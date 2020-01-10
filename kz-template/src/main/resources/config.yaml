@@ -3,17 +3,15 @@
 # 需要生成的表名称  *
 tableNameList:
   - t_agent_ledger_record
-  - t_fubei_sub_mech_shop_rel
-  - t_mall_order_pay_sub_info
 
 # 生成文件的绝对路径 *
 generatePath: D:\hhh
 
 # 生成java的共用包名(列: ctrl包的上一级) *
-packageName: hhz.system
+packageName: com.kz.pay.demo
 
 # 项目名称(列: kzPlatformBI) *
-projectName: kzPlatformBI
+projectName: kzPlatformPay
 
 # 作者 *
 author: huanghz

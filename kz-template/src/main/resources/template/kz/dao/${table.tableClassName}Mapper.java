@@ -62,7 +62,7 @@ public interface ${table.tableClassName}Mapper
     int delete${table.tableClassName}(Map<String, Object> param);
 
     /**
-     * 删除多条数据
+     * 更新一条数据
      *
      * @param param
      * @return

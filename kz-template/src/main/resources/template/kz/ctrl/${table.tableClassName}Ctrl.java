@@ -102,7 +102,7 @@ public class ${table.tableClassName}Ctrl
     }
 
     /**
-     * 删除多条数据
+     * 更新一条数据
      *
      * @param data
      * @return
