@@ -1,6 +1,6 @@
-package com.kz.bi.controller.demo.ctrl;
+package ${packageName}.ctrl;
 
-import com.kz.bi.controller.demo.service.iface.AgentLedgerRecordService;
+import ${packageName}.service.iface.${table.tableClassName}Service;
 import org.apache.servicecomb.provider.rest.common.RestSchema;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -12,19 +12,19 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import javax.ws.rs.core.MediaType;
 
 /**
- * @ClassName: AgentLedgerRecordCtrl
+ * @ClassName: ${table.tableClassName}Ctrl
  * @Description: TODO(该类为自动生成, 请及时修改说明)
- * @Author: huanghz
- * @Date: 2020/1/10 9:35
+ * @Author: ${author}
+ * @Date: ${data}
  */
-@RestSchema(schemaId = "agentLedgerRecordCtrl")
-@RequestMapping(path = "/kzPlatformBI/agentLedgerRecordCtrl", produces = MediaType.APPLICATION_JSON)
-public class AgentLedgerRecordCtrl
+@RestSchema(schemaId = "${table.tableClassName?uncap_first}Ctrl")
+@RequestMapping(path = "/${projectName}/${table.tableClassName?uncap_first}Ctrl", produces = MediaType.APPLICATION_JSON)
+public class ${table.tableClassName}Ctrl
 {
     private final Logger logger = LoggerFactory.getLogger(getClass());
 
     @Autowired
-    private AgentLedgerRecordService agentLedgerRecordService;
+    private ${table.tableClassName}Service ${table.tableClassName?uncap_first}Service;
 
     /**
      * 查询一条数据
@@ -32,12 +32,12 @@ public class AgentLedgerRecordCtrl
      * @param data
      * @return
      */
-    @PostMapping(value = "/getAgentLedgerRecord", produces = MediaType.TEXT_PLAIN)
-    public String getAgentLedgerRecord(@RequestBody String data)
+    @PostMapping(value = "/get${table.tableClassName}", produces = MediaType.TEXT_PLAIN)
+    public String get${table.tableClassName}(@RequestBody String data)
     {
-        logger.info("/kzPlatformBI/agentLedgerRecordCtrl/getAgentLedgerRecord start data: " + data);
-        String ret = agentLedgerRecordService.getAgentLedgerRecord(data);
-        logger.info("/kzPlatformBI/agentLedgerRecordCtrl/getAgentLedgerRecord end ret: " + ret);
+        logger.info("/${projectName}/${table.tableClassName?uncap_first}Ctrl/get${table.tableClassName} start data: " + data);
+        String ret = ${table.tableClassName?uncap_first}Service.get${table.tableClassName}(data);
+        logger.info("/${projectName}/${table.tableClassName?uncap_first}Ctrl/get${table.tableClassName} end ret: " + ret);
         return ret;
     }
 
@@ -47,12 +47,12 @@ public class AgentLedgerRecordCtrl
      * @param data
      * @return
      */
-    @PostMapping(value = "/listAgentLedgerRecord", produces = MediaType.TEXT_PLAIN)
-    public String listAgentLedgerRecord(@RequestBody String data)
+    @PostMapping(value = "/list${table.tableClassName}", produces = MediaType.TEXT_PLAIN)
+    public String list${table.tableClassName}(@RequestBody String data)
     {
-        logger.info("/kzPlatformBI/agentLedgerRecordCtrl/listAgentLedgerRecord start data: " + data);
-        String ret = agentLedgerRecordService.listAgentLedgerRecord(data);
-        logger.info("/kzPlatformBI/agentLedgerRecordCtrl/listAgentLedgerRecord end ret: " + ret);
+        logger.info("/${projectName}/${table.tableClassName?uncap_first}Ctrl/list${table.tableClassName} start data: " + data);
+        String ret = ${table.tableClassName?uncap_first}Service.list${table.tableClassName}(data);
+        logger.info("/${projectName}/${table.tableClassName?uncap_first}Ctrl/list${table.tableClassName} end ret: " + ret);
         return ret;
     }
 
@@ -62,12 +62,12 @@ public class AgentLedgerRecordCtrl
      * @param data
      * @return
      */
-    @PostMapping(value = "/addAgentLedgerRecord", produces = MediaType.TEXT_PLAIN)
-    public String addAgentLedgerRecord(@RequestBody String data)
+    @PostMapping(value = "/add${table.tableClassName}", produces = MediaType.TEXT_PLAIN)
+    public String add${table.tableClassName}(@RequestBody String data)
     {
-        logger.info("/kzPlatformBI/agentLedgerRecordCtrl/addAgentLedgerRecord start data: " + data);
-        String ret = agentLedgerRecordService.addAgentLedgerRecord(data);
-        logger.info("/kzPlatformBI/agentLedgerRecordCtrl/addAgentLedgerRecord end ret: " + ret);
+        logger.info("/${projectName}/${table.tableClassName?uncap_first}Ctrl/add${table.tableClassName} start data: " + data);
+        String ret = ${table.tableClassName?uncap_first}Service.add${table.tableClassName}(data);
+        logger.info("/${projectName}/${table.tableClassName?uncap_first}Ctrl/add${table.tableClassName} end ret: " + ret);
         return ret;
     }
 
@@ -77,12 +77,12 @@ public class AgentLedgerRecordCtrl
      * @param data
      * @return
      */
-    @PostMapping(value = "/addAgentLedgerRecordBatch", produces = MediaType.TEXT_PLAIN)
-    public String addAgentLedgerRecordBatch(@RequestBody String data)
+    @PostMapping(value = "/add${table.tableClassName}Batch", produces = MediaType.TEXT_PLAIN)
+    public String add${table.tableClassName}Batch(@RequestBody String data)
     {
-        logger.info("/kzPlatformBI/agentLedgerRecordCtrl/addAgentLedgerRecordBatch start data: " + data);
-        String ret = agentLedgerRecordService.addAgentLedgerRecordBatch(data);
-        logger.info("/kzPlatformBI/agentLedgerRecordCtrl/addAgentLedgerRecordBatch end ret: " + ret);
+        logger.info("/${projectName}/${table.tableClassName?uncap_first}Ctrl/add${table.tableClassName}Batch start data: " + data);
+        String ret = ${table.tableClassName?uncap_first}Service.add${table.tableClassName}Batch(data);
+        logger.info("/${projectName}/${table.tableClassName?uncap_first}Ctrl/add${table.tableClassName}Batch end ret: " + ret);
         return ret;
     }
 
@@ -92,12 +92,12 @@ public class AgentLedgerRecordCtrl
      * @param data
      * @return
      */
-    @PostMapping(value = "/deleteAgentLedgerRecord", produces = MediaType.TEXT_PLAIN)
-    public String deleteAgentLedgerRecord(@RequestBody String data)
+    @PostMapping(value = "/delete${table.tableClassName}", produces = MediaType.TEXT_PLAIN)
+    public String delete${table.tableClassName}(@RequestBody String data)
     {
-        logger.info("/kzPlatformBI/agentLedgerRecordCtrl/deleteAgentLedgerRecord start data: " + data);
-        String ret = agentLedgerRecordService.deleteAgentLedgerRecord(data);
-        logger.info("/kzPlatformBI/agentLedgerRecordCtrl/deleteAgentLedgerRecord end ret: " + ret);
+        logger.info("/${projectName}/${table.tableClassName?uncap_first}Ctrl/delete${table.tableClassName} start data: " + data);
+        String ret = ${table.tableClassName?uncap_first}Service.delete${table.tableClassName}(data);
+        logger.info("/${projectName}/${table.tableClassName?uncap_first}Ctrl/delete${table.tableClassName} end ret: " + ret);
         return ret;
     }
 
@@ -107,12 +107,12 @@ public class AgentLedgerRecordCtrl
      * @param data
      * @return
      */
-    @PostMapping(value = "/updateAgentLedgerRecord", produces = MediaType.TEXT_PLAIN)
-    public String updateAgentLedgerRecord(@RequestBody String data)
+    @PostMapping(value = "/update${table.tableClassName}", produces = MediaType.TEXT_PLAIN)
+    public String update${table.tableClassName}(@RequestBody String data)
     {
-        logger.info("/kzPlatformBI/agentLedgerRecordCtrl/updateAgentLedgerRecord start data: " + data);
-        String ret = agentLedgerRecordService.updateAgentLedgerRecord(data);
-        logger.info("/kzPlatformBI/agentLedgerRecordCtrl/updateAgentLedgerRecord end ret: " + ret);
+        logger.info("/${projectName}/${table.tableClassName?uncap_first}Ctrl/update${table.tableClassName} start data: " + data);
+        String ret = ${table.tableClassName?uncap_first}Service.update${table.tableClassName}(data);
+        logger.info("/${projectName}/${table.tableClassName?uncap_first}Ctrl/update${table.tableClassName} end ret: " + ret);
         return ret;
     }
 }

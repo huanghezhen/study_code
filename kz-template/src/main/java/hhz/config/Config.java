@@ -45,6 +45,17 @@ public class Config
     private List<String>        tableNameList;
     private List<String>        ignoreColumn;
     private String              tableRemovePrefixes;
+    private String              projectName;
+
+    public String getProjectName()
+    {
+        return projectName;
+    }
+
+    public void setProjectName(String projectName)
+    {
+        this.projectName = projectName;
+    }
 
     public String getPackageName()
     {

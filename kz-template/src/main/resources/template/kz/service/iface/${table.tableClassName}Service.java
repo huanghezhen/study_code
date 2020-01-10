@@ -1,12 +1,12 @@
-package com.kz.bi.controller.demo.service.iface;
+package ${packageName}.service.iface;
 
 /**
- * @ClassName: AgentLedgerRecordService
+ * @ClassName: ${table.tableClassName}Service
  * @Description: TODO(该类为自动生成, 请及时修改说明)
- * @Author: huanghz
- * @Date: 2020/1/10 9:39
+ * @Author: ${author}
+ * @Date: ${data}
  */
-public interface AgentLedgerRecordService
+public interface ${table.tableClassName}Service
 {
     /**
      * 查询一条数据
@@ -14,7 +14,7 @@ public interface AgentLedgerRecordService
      * @param data
      * @return
      */
-    String getAgentLedgerRecord(String data);
+    String get${table.tableClassName}(String data);
 
     /**
      * 查询多条数据
@@ -22,7 +22,7 @@ public interface AgentLedgerRecordService
      * @param data
      * @return
      */
-    String listAgentLedgerRecord(String data);
+    String list${table.tableClassName}(String data);
 
     /**
      * 新增一条数据
@@ -30,7 +30,7 @@ public interface AgentLedgerRecordService
      * @param data
      * @return
      */
-    String addAgentLedgerRecord(String data);
+    String add${table.tableClassName}(String data);
 
     /**
      * 新增多条数据
@@ -38,7 +38,7 @@ public interface AgentLedgerRecordService
      * @param data
      * @return
      */
-    String addAgentLedgerRecordBatch(String data);
+    String add${table.tableClassName}Batch(String data);
 
     /**
      * 删除一条数据
@@ -46,7 +46,7 @@ public interface AgentLedgerRecordService
      * @param data
      * @return
      */
-    String deleteAgentLedgerRecord(String data);
+    String delete${table.tableClassName}(String data);
 
     /**
      * 删除多条数据
@@ -54,5 +54,5 @@ public interface AgentLedgerRecordService
      * @param data
      * @return
      */
-    String updateAgentLedgerRecord(String data);
+    String update${table.tableClassName}(String data);
 }

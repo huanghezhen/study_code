@@ -1,17 +1,17 @@
-package com.kz.bi.controller.demo.dao;
+package ${packageName}.dao;
 
-import com.kz.bi.controller.demo.entity.AgentLedgerRecord;
+import ${packageName}.entity.${table.tableClassName};
 
 import java.util.List;
 import java.util.Map;
 
 /**
- * @ClassName: AgentLedgerRecordMapper
+ * @ClassName: ${table.tableClassName}Mapper
  * @Description: TODO(该类为自动生成, 请及时修改说明)
- * @Author: huanghz
- * @Date: 2020/1/10 9:42
+ * @Author: ${author}
+ * @Date: ${data}
  */
-public interface AgentLedgerRecordMapper
+public interface ${table.tableClassName}Mapper
 {
     /**
      * 查询一条数据
@@ -19,7 +19,7 @@ public interface AgentLedgerRecordMapper
      * @param param
      * @return
      */
-    AgentLedgerRecord getAgentLedgerRecord(Map<String, Object> param);
+    ${table.tableClassName} get${table.tableClassName}(Map<String, Object> param);
 
     /**
      * 查询多条数据 count
@@ -27,7 +27,7 @@ public interface AgentLedgerRecordMapper
      * @param param
      * @return
      */
-    int countAgentLedgerRecord(Map<String, Object> param);
+    int count${table.tableClassName}(Map<String, Object> param);
 
     /**
      * 查询多条数据 list
@@ -35,7 +35,7 @@ public interface AgentLedgerRecordMapper
      * @param param
      * @return
      */
-    List<AgentLedgerRecord> listAgentLedgerRecord(Map<String, Object> param);
+    List<${table.tableClassName}> list${table.tableClassName}(Map<String, Object> param);
 
     /**
      * 新增一条数据
@@ -43,7 +43,7 @@ public interface AgentLedgerRecordMapper
      * @param param
      * @return
      */
-    int addAgentLedgerRecord(AgentLedgerRecord param);
+    int add${table.tableClassName}(${table.tableClassName} param);
 
     /**
      * 新增多条数据
@@ -51,7 +51,7 @@ public interface AgentLedgerRecordMapper
      * @param param
      * @return
      */
-    int addAgentLedgerRecordBatch(List<AgentLedgerRecord> param);
+    int add${table.tableClassName}Batch(List<${table.tableClassName}> param);
 
     /**
      * 删除一条数据
@@ -59,7 +59,7 @@ public interface AgentLedgerRecordMapper
      * @param param
      * @return
      */
-    int deleteAgentLedgerRecord(Map<String, Object> param);
+    int delete${table.tableClassName}(Map<String, Object> param);
 
     /**
      * 删除多条数据
@@ -67,5 +67,5 @@ public interface AgentLedgerRecordMapper
      * @param param
      * @return
      */
-    int updateAgentLedgerRecord(AgentLedgerRecord param);
+    int update${table.tableClassName}(${table.tableClassName} param);
 }

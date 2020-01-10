@@ -26,6 +26,7 @@ public class Main
         SimpleDateFormat format = new SimpleDateFormat("yyyy/MM/dd HH:mm");
         Map<String, Object> model = new HashMap<>();
         model.put("packageName", Config.init.getPackageName());
+        model.put("projectName", Config.init.getProjectName());
         model.put("author", Config.init.getAuthor());
         model.put("data", format.format(new Date().getTime()));
         for (Table table : MetaDataUtil.getTable())
