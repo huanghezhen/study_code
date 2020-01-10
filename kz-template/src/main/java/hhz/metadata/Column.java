@@ -9,15 +9,27 @@ package hhz.metadata;
 public class Column
 {
     // 列名称
-    private String columnName;
+    private String  columnName;
     // 列名称对应的属性名称
-    private String columnClassName;
+    private String  columnClassName;
     // 列类型
-    private String columnType;
+    private String  columnType;
     // 列对应的Java类型
-    private String columnJavaType;
+    private String  columnJavaType;
     // 列备注
-    private String columnComment;
+    private String  columnComment;
+    // 是否是主键
+    private Boolean primaryAble;
+
+    public Boolean getPrimaryAble()
+    {
+        return primaryAble;
+    }
+
+    public void setPrimaryAble(Boolean primaryAble)
+    {
+        this.primaryAble = primaryAble;
+    }
 
     public String getColumnName()
     {

@@ -18,6 +18,18 @@ public class Table
     private String       tableComment;
     // 列集合
     private List<Column> columns;
+    // 主键集合
+    private List<String> primaryList;
+
+    public List<String> getPrimaryList()
+    {
+        return primaryList;
+    }
+
+    public void setPrimaryList(List<String> primaryList)
+    {
+        this.primaryList = primaryList;
+    }
 
     public String getTableName()
     {

@@ -21,9 +21,10 @@ public class StringUtil
         return camelCaseName(temp);
     }
 
-    public static String removePrefixSub(String name,String pf)
+    public static String removePrefixSub(String name, String pf)
     {
-        if(name.startsWith(pf)) {
+        if (name.startsWith(pf))
+        {
             name = name.substring(pf.length());
         }
         char[] cs = name.toCharArray();

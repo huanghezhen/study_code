@@ -23,28 +23,34 @@ public class Generator
 
     private Configuration configuration;
 
-    public Generator() {
-        this.templatePath = getClass().getClassLoader().getResource("template").getPath().substring(1).replace("/","\\");
+    public Generator()
+    {
+        this.templatePath = getClass().getClassLoader().getResource("template").getPath().substring(1).replace("/", "\\");
         this.outPath = Config.init.getGeneratePath();
 
         configuration = new Configuration(Configuration.VERSION_2_3_29);
-        try {
+        try
+        {
             configuration.setTemplateLoader(new FileTemplateLoader(new File(templatePath)));
-        } catch (IOException e) {
+        }
+        catch (IOException e)
+        {
             e.printStackTrace();
         }
     }
 
-
-    public void scanAndGenerator(Map<String, Object> dataModel) throws Exception {
+    public void scanAndGenerator(Map<String, Object> dataModel) throws Exception
+    {
         List<File> files = FileUtil.searchAllFile(new File(templatePath));
-        for (File file : files) {
+        for (File file : files)
+        {
             execute(dataModel, file);
         }
     }
 
-    public void execute(Map<String, Object> dataModel, File file) throws Exception {
-        String absolutePath = file.getAbsolutePath().replace(this.templatePath,"");
+    public void execute(Map<String, Object> dataModel, File file) throws Exception
+    {
+        String absolutePath = file.getAbsolutePath().replace(this.templatePath, "");
         String outPathName = processTemplateString(absolutePath, dataModel);
         Template template = configuration.getTemplate(absolutePath);
         template.setOutputEncoding("utf-8");
@@ -54,8 +60,8 @@ public class Generator
         fw.close();
     }
 
-
-    public String processTemplateString(String templateString, Map<String, Object> dataModel) throws Exception {
+    public String processTemplateString(String templateString, Map<String, Object> dataModel) throws Exception
+    {
         StringWriter out = new StringWriter();
         Template template = new Template("ts", new StringReader(templateString), configuration);
         template.process(dataModel, out);

@@ -43,8 +43,9 @@ public class MetaDataUtil
         Table table;
         for (String tableName : tableNameList)
         {
-            ResultSet tableRet = metaData.getTables(null, null, tableName, new String[]{"TABLE"});
-            while (tableRet.next()) {
+            ResultSet tableRet = metaData.getTables(null, null, tableName, new String[] {"TABLE"});
+            while (tableRet.next())
+            {
                 table = new Table();
                 table.setTableName(tableName);
                 table.setTableClassName(StringUtil.removePrefix(tableName));
@@ -52,7 +53,8 @@ public class MetaDataUtil
                 ResultSet columnRet = metaData.getColumns(null, null, tableName, null);
                 List<Column> columnList = new ArrayList<>();
                 Column column;
-                while (columnRet.next()) {
+                while (columnRet.next())
+                {
                     String columnName = columnRet.getString("COLUMN_NAME");
                     // 字段被忽略 直接跳过
                     if (Config.init.getIgnoreColumn().contains(columnName))
