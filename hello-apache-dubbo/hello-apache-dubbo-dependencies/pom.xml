@@ -8,7 +8,7 @@
     <packaging>pom</packaging>
     <url>http://www.funtl.com</url>
     <properties>
-        <dubbo.version>2.7.2</dubbo.version>
+        <dubbo.version>2.7.15</dubbo.version>
         <dubbo-actuator.version>2.7.1</dubbo-actuator.version>
         <spring-cloud.version>Greenwich.RELEASE</spring-cloud.version>
         <spring-cloud-alibaba.verion>0.9.0.RELEASE</spring-cloud-alibaba.verion>
